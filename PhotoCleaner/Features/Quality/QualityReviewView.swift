@@ -227,27 +227,27 @@ struct QualityReviewView: View {
     }
 
     private func gradeFor(_ entity: PhotoAssetEntity) -> QualityScore.Grade {
-        if entity.isUtility { return .utility }
-        guard let score = entity.aestheticScore else { return .average }
+        if entity.isUtility { return .U }
+        guard entity.aestheticScore != nil else { return .C }
 
         let composite = entity.compositeQualityScore
         switch composite {
-        case 0.8...1.0: return .excellent
-        case 0.6..<0.8: return .good
-        case 0.4..<0.6: return .average
-        case 0.2..<0.4: return .poor
-        default: return .bad
+        case 0.8...1.0: return .A
+        case 0.6..<0.8: return .B
+        case 0.4..<0.6: return .C
+        case 0.2..<0.4: return .D
+        default: return .F
         }
     }
 
     private func colorFor(_ grade: QualityScore.Grade) -> Color {
         switch grade {
-        case .excellent: return .green
-        case .good: return .blue
-        case .average: return .yellow
-        case .poor: return .orange
-        case .bad: return .red
-        case .utility: return .gray
+        case .A: return .green
+        case .B: return .blue
+        case .C: return .yellow
+        case .D: return .orange
+        case .F: return .red
+        case .U: return .gray
         }
     }
 

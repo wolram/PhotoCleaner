@@ -29,14 +29,99 @@ actor PhotoLibraryService {
         return status == .authorized || status == .limited
     }
 
+    // MARK: - Albums
+
+    struct Album: Identifiable, Hashable {
+        let id: String
+        let title: String
+        let count: Int
+        let type: AlbumType
+
+        enum AlbumType: String {
+            case allPhotos = "all"
+            case smartAlbum = "smart"
+            case userAlbum = "user"
+        }
+    }
+
+    func fetchAlbums() async -> [Album] {
+        var albums: [Album] = []
+
+        // Add "All Photos" option
+        let allPhotosCount = PHAsset.fetchAssets(with: .image, options: nil).count
+        albums.append(Album(
+            id: "all-photos",
+            title: "All Photos",
+            count: allPhotosCount,
+            type: .allPhotos
+        ))
+
+        // Smart Albums (Favorites, Screenshots, etc.)
+        let smartAlbums = PHAssetCollection.fetchAssetCollections(
+            with: .smartAlbum,
+            subtype: .any,
+            options: nil
+        )
+
+        smartAlbums.enumerateObjects { collection, _, _ in
+            let assets = PHAsset.fetchAssets(in: collection, options: nil)
+            if assets.count > 0 {
+                albums.append(Album(
+                    id: collection.localIdentifier,
+                    title: collection.localizedTitle ?? "Untitled",
+                    count: assets.count,
+                    type: .smartAlbum
+                ))
+            }
+        }
+
+        // User Albums
+        let userAlbums = PHAssetCollection.fetchAssetCollections(
+            with: .album,
+            subtype: .any,
+            options: nil
+        )
+
+        userAlbums.enumerateObjects { collection, _, _ in
+            let assets = PHAsset.fetchAssets(in: collection, options: nil)
+            if assets.count > 0 {
+                albums.append(Album(
+                    id: collection.localIdentifier,
+                    title: collection.localizedTitle ?? "Untitled",
+                    count: assets.count,
+                    type: .userAlbum
+                ))
+            }
+        }
+
+        return albums
+    }
+
     // MARK: - Fetching Assets
 
-    func fetchAllAssetIdentifiers() async -> [String] {
+    func fetchAllAssetIdentifiers(albumId: String? = nil) async -> [String] {
         let options = PHFetchOptions()
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         options.includeHiddenAssets = false
 
-        let result = PHAsset.fetchAssets(with: .image, options: options)
+        let result: PHFetchResult<PHAsset>
+
+        if let albumId = albumId, albumId != "all-photos" {
+            // Fetch from specific album
+            let collections = PHAssetCollection.fetchAssetCollections(
+                withLocalIdentifiers: [albumId],
+                options: nil
+            )
+            if let collection = collections.firstObject {
+                result = PHAsset.fetchAssets(in: collection, options: options)
+            } else {
+                return []
+            }
+        } else {
+            // Fetch all photos
+            result = PHAsset.fetchAssets(with: .image, options: options)
+        }
+
         var identifiers: [String] = []
         identifiers.reserveCapacity(result.count)
 
@@ -134,9 +219,11 @@ actor PhotoLibraryService {
         await withCheckedContinuation { continuation in
             let options = PHImageRequestOptions()
             options.deliveryMode = .highQualityFormat
-            options.isNetworkAccessAllowed = false
+            options.isNetworkAccessAllowed = true  // Allow iCloud downloads
             options.isSynchronous = false
             options.resizeMode = .exact
+
+            var hasResumed = false  // Prevent multiple resumes
 
             cachingManager.requestImage(
                 for: asset,
@@ -144,8 +231,15 @@ actor PhotoLibraryService {
                 contentMode: .aspectFit,
                 options: options
             ) { image, info in
+                guard !hasResumed else { return }
+
                 let isDegraded = info?[PHImageResultIsDegradedKey] as? Bool ?? false
-                if !isDegraded {
+                let error = info?[PHImageErrorKey] as? Error
+                let cancelled = info?[PHImageCancelledKey] as? Bool ?? false
+
+                // Resume on final image OR on error/cancel
+                if !isDegraded || error != nil || cancelled {
+                    hasResumed = true
                     if let image = image {
                         var rect = CGRect(origin: .zero, size: image.size)
                         continuation.resume(returning: image.cgImage(forProposedRect: &rect, context: nil, hints: nil))

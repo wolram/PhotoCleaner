@@ -92,23 +92,23 @@ struct QualityBadge: View {
 
     private var backgroundColor: Color {
         switch grade {
-        case .excellent: return .green.opacity(0.2)
-        case .good: return .blue.opacity(0.2)
-        case .average: return .yellow.opacity(0.2)
-        case .poor: return .orange.opacity(0.2)
-        case .bad: return .red.opacity(0.2)
-        case .utility: return .gray.opacity(0.2)
+        case .A: return .green.opacity(0.2)
+        case .B: return .blue.opacity(0.2)
+        case .C: return .yellow.opacity(0.2)
+        case .D: return .orange.opacity(0.2)
+        case .F: return .red.opacity(0.2)
+        case .U: return .gray.opacity(0.2)
         }
     }
 
     private var foregroundColor: Color {
         switch grade {
-        case .excellent: return .green
-        case .good: return .blue
-        case .average: return .yellow
-        case .poor: return .orange
-        case .bad: return .red
-        case .utility: return .gray
+        case .A: return .green
+        case .B: return .blue
+        case .C: return .yellow
+        case .D: return .orange
+        case .F: return .red
+        case .U: return .gray
         }
     }
 }
@@ -156,10 +156,10 @@ struct ScoreBar: View {
         }
 
         HStack(spacing: 10) {
-            QualityBadge(grade: .excellent)
-            QualityBadge(grade: .good)
-            QualityBadge(grade: .average)
-            QualityBadge(grade: .poor)
+            QualityBadge(grade: .A)
+            QualityBadge(grade: .B)
+            QualityBadge(grade: .C)
+            QualityBadge(grade: .D)
         }
 
         VStack(spacing: 8) {

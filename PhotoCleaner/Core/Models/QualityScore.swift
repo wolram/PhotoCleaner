@@ -20,55 +20,77 @@ struct QualityScore: Codable, Hashable {
     }
 
     var grade: Grade {
-        if isUtility { return .utility }
+        if isUtility { return .U }
         let score = composite
         switch score {
-        case 0.8...1.0: return .excellent
-        case 0.6..<0.8: return .good
-        case 0.4..<0.6: return .average
-        case 0.2..<0.4: return .poor
-        default: return .bad
+        case 0.8...1.0: return .A
+        case 0.6..<0.8: return .B
+        case 0.4..<0.6: return .C
+        case 0.2..<0.4: return .D
+        default: return .F
         }
     }
 
     enum Grade: String, CaseIterable {
-        case excellent
-        case good
-        case average
-        case poor
-        case bad
-        case utility
+        case A
+        case B
+        case C
+        case D
+        case F
+        case U
 
         var displayName: String {
             switch self {
-            case .excellent: return "Excellent"
-            case .good: return "Good"
-            case .average: return "Average"
-            case .poor: return "Poor"
-            case .bad: return "Bad"
-            case .utility: return "Utility"
+            case .A: return "A"
+            case .B: return "B"
+            case .C: return "C"
+            case .D: return "D"
+            case .F: return "F"
+            case .U: return "U"
+            }
+        }
+
+        var description: String {
+            switch self {
+            case .A: return "Excellent"
+            case .B: return "Good"
+            case .C: return "Average"
+            case .D: return "Poor"
+            case .F: return "Bad"
+            case .U: return "Utility"
             }
         }
 
         var color: String {
             switch self {
-            case .excellent: return "green"
-            case .good: return "blue"
-            case .average: return "yellow"
-            case .poor: return "orange"
-            case .bad: return "red"
-            case .utility: return "gray"
+            case .A: return "green"
+            case .B: return "blue"
+            case .C: return "yellow"
+            case .D: return "orange"
+            case .F: return "red"
+            case .U: return "gray"
             }
         }
 
         var icon: String {
             switch self {
-            case .excellent: return "star.fill"
-            case .good: return "hand.thumbsup.fill"
-            case .average: return "minus.circle"
-            case .poor: return "hand.thumbsdown"
-            case .bad: return "xmark.circle"
-            case .utility: return "doc.text"
+            case .A: return "star.fill"
+            case .B: return "hand.thumbsup.fill"
+            case .C: return "minus.circle"
+            case .D: return "hand.thumbsdown"
+            case .F: return "xmark.circle"
+            case .U: return "doc.text"
+            }
+        }
+
+        var scoreRange: String {
+            switch self {
+            case .A: return "80-100%"
+            case .B: return "60-80%"
+            case .C: return "40-60%"
+            case .D: return "20-40%"
+            case .F: return "<20%"
+            case .U: return "N/A"
             }
         }
     }

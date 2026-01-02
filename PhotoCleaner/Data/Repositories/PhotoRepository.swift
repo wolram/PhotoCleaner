@@ -73,7 +73,12 @@ final class PhotoRepository {
         aestheticScore: Float?,
         isUtility: Bool,
         blurScore: Float?,
-        exposureScore: Float?
+        exposureScore: Float?,
+        fileSize: Int64 = 0,
+        pixelWidth: Int = 0,
+        pixelHeight: Int = 0,
+        creationDate: Date? = nil,
+        fileName: String? = nil
     ) {
         let entity = fetchOrCreate(localIdentifier: localIdentifier)
         entity.featurePrintData = featurePrintData
@@ -82,6 +87,11 @@ final class PhotoRepository {
         entity.isUtility = isUtility
         entity.blurScore = blurScore
         entity.exposureScore = exposureScore
+        entity.fileSize = fileSize
+        entity.pixelWidth = pixelWidth
+        entity.pixelHeight = pixelHeight
+        entity.creationDate = creationDate
+        entity.fileName = fileName
         entity.lastAnalyzedAt = Date()
     }
 
@@ -191,15 +201,15 @@ final class PhotoRepository {
         for entity in fetchAll() {
             let grade: QualityScore.Grade
             if entity.isUtility {
-                grade = .utility
+                grade = .U
             } else {
                 let composite = entity.compositeQualityScore
                 switch composite {
-                case 0.8...1.0: grade = .excellent
-                case 0.6..<0.8: grade = .good
-                case 0.4..<0.6: grade = .average
-                case 0.2..<0.4: grade = .poor
-                default: grade = .bad
+                case 0.8...1.0: grade = .A
+                case 0.6..<0.8: grade = .B
+                case 0.4..<0.6: grade = .C
+                case 0.2..<0.4: grade = .D
+                default: grade = .F
                 }
             }
             distribution[grade, default: 0] += 1

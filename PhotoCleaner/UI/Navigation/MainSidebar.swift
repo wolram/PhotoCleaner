@@ -75,6 +75,25 @@ struct MainSidebar: View {
                 NavigationLink(value: NavigationDestination.quality) {
                     Label("Quality", systemImage: "sparkles")
                 }
+
+                NavigationLink(value: NavigationDestination.battle) {
+                    Label {
+                        HStack {
+                            Text("Battle")
+                            Spacer()
+                            Text("FUN")
+                                .font(.caption2)
+                                .fontWeight(.bold)
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 2)
+                                .background(.purple.opacity(0.2))
+                                .foregroundStyle(.purple)
+                                .clipShape(Capsule())
+                        }
+                    } icon: {
+                        Image(systemName: "gamecontroller")
+                    }
+                }
             }
 
             Section("Organize") {

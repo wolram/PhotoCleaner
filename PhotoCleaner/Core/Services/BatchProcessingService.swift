@@ -33,6 +33,13 @@ actor BatchProcessingService {
         var exposureScore: Float?
         var embedding: [Float]?
         var error: Error?
+
+        // Asset metadata
+        var fileSize: Int64
+        var pixelWidth: Int
+        var pixelHeight: Int
+        var creationDate: Date?
+        var fileName: String?
     }
 
     func processPhotos(
@@ -90,15 +97,27 @@ actor BatchProcessingService {
     private func processPhoto(id: String) async -> ProcessingResult {
         var result = ProcessingResult(
             photoId: id,
-            isUtility: false
+            isUtility: false,
+            fileSize: 0,
+            pixelWidth: 0,
+            pixelHeight: 0
         )
 
         do {
             // Get asset
             guard let asset = await PhotoLibraryService.shared.fetchAsset(identifier: id) else {
                 result.error = ProcessingError.assetNotFound
+                print("⚠️ Asset not found: \(id)")
                 return result
             }
+
+            // Get asset metadata
+            let assetInfo = await PhotoLibraryService.shared.getAssetInfo(asset)
+            result.fileSize = assetInfo.fileSize
+            result.pixelWidth = Int(assetInfo.dimensions.width)
+            result.pixelHeight = Int(assetInfo.dimensions.height)
+            result.creationDate = assetInfo.creationDate
+            result.fileName = assetInfo.fileName
 
             // Load image
             let targetSize = AppConfig.Processing.analysisImageSize
@@ -107,6 +126,7 @@ actor BatchProcessingService {
                 targetSize: targetSize
             ) else {
                 result.error = ProcessingError.imageLoadFailed
+                print("⚠️ Image load failed: \(id) - may be iCloud only or corrupted")
                 return result
             }
 
@@ -129,6 +149,7 @@ actor BatchProcessingService {
 
         } catch {
             result.error = error
+            print("⚠️ Analysis failed for \(id): \(error.localizedDescription)")
         }
 
         return result

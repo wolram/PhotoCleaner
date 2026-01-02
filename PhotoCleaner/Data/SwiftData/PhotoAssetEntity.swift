@@ -31,9 +31,9 @@ final class PhotoAssetEntity {
     var tertiaryCategory: String?
     var tertiaryCategoryScore: Float?
 
-    // Relationships
+    // Relationships - many-to-many (photo can be in multiple groups)
     @Relationship(deleteRule: .nullify, inverse: \PhotoGroupEntity.photos)
-    var group: PhotoGroupEntity?
+    var groups: [PhotoGroupEntity]
 
     var lastAnalyzedAt: Date?
     var analysisVersion: Int
@@ -50,6 +50,7 @@ final class PhotoAssetEntity {
         self.fileSize = fileSize
         self.isUtility = false
         self.analysisVersion = 1
+        self.groups = []
     }
 
     var compositeQualityScore: Float {

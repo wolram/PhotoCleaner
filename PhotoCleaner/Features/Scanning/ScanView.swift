@@ -1,7 +1,9 @@
 import SwiftUI
+import SwiftData
 
 struct ScanView: View {
     @EnvironmentObject private var appState: AppState
+    @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel = ScanViewModel()
 
     var body: some View {
@@ -17,6 +19,10 @@ struct ScanView: View {
         .navigationTitle("Scan Library")
         .onAppear {
             viewModel.appState = appState
+            viewModel.modelContext = modelContext
+            Task {
+                await viewModel.loadAlbums()
+            }
         }
     }
 
@@ -36,6 +42,43 @@ struct ScanView: View {
                 Text("Find duplicates, similar photos, and low-quality images")
                     .foregroundStyle(.secondary)
             }
+
+            // Album Picker
+            VStack(alignment: .leading, spacing: 12) {
+                Text("Select Album to Scan")
+                    .font(.headline)
+
+                if viewModel.isLoadingAlbums {
+                    HStack {
+                        ProgressView()
+                            .scaleEffect(0.8)
+                        Text("Loading albums...")
+                            .foregroundStyle(.secondary)
+                    }
+                } else {
+                    Picker("Album", selection: $viewModel.selectedAlbum) {
+                        ForEach(viewModel.albums) { album in
+                            HStack {
+                                albumIcon(for: album.type)
+                                Text("\(album.title) (\(album.count))")
+                            }
+                            .tag(album as PhotoLibraryService.Album?)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .frame(maxWidth: 300)
+
+                    if let album = viewModel.selectedAlbum {
+                        Text("\(album.count) photos will be scanned")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+            .padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(.regularMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
 
             VStack(alignment: .leading, spacing: 16) {
                 scanOptionRow(
@@ -77,8 +120,20 @@ struct ScanView: View {
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
+            .disabled(viewModel.selectedAlbum == nil)
         }
         .padding(40)
+    }
+
+    private func albumIcon(for type: PhotoLibraryService.Album.AlbumType) -> some View {
+        Image(systemName: {
+            switch type {
+            case .allPhotos: return "photo.on.rectangle.angled"
+            case .smartAlbum: return "gearshape"
+            case .userAlbum: return "folder"
+            }
+        }())
+        .foregroundStyle(.blue)
     }
 
     private func scanOptionRow(icon: String, title: String, description: String) -> some View {

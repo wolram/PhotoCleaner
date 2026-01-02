@@ -6,6 +6,7 @@ enum NavigationDestination: String, Hashable, CaseIterable, Identifiable {
     case duplicates
     case similar
     case quality
+    case battle
     case categories
 
     var id: String { rawValue }
@@ -17,6 +18,7 @@ enum NavigationDestination: String, Hashable, CaseIterable, Identifiable {
         case .duplicates: return "Duplicates"
         case .similar: return "Similar"
         case .quality: return "Quality"
+        case .battle: return "Battle"
         case .categories: return "Categories"
         }
     }
@@ -28,6 +30,7 @@ enum NavigationDestination: String, Hashable, CaseIterable, Identifiable {
         case .duplicates: return "doc.on.doc"
         case .similar: return "square.stack.3d.up"
         case .quality: return "sparkles"
+        case .battle: return "gamecontroller"
         case .categories: return "folder"
         }
     }
@@ -35,7 +38,7 @@ enum NavigationDestination: String, Hashable, CaseIterable, Identifiable {
     var section: Section {
         switch self {
         case .library, .scan: return .library
-        case .duplicates, .similar, .quality: return .cleanup
+        case .duplicates, .similar, .quality, .battle: return .cleanup
         case .categories: return .organize
         }
     }

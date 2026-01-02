@@ -34,13 +34,13 @@ final class QualityScoreTests: XCTestCase {
 
     func testGradeAssignment() {
         let excellent = QualityScore(aestheticScore: 0.9, isUtility: false, blurScore: 0.95, exposureScore: 0.5)
-        XCTAssertEqual(excellent.grade, .excellent)
+        XCTAssertEqual(excellent.grade, .A)
 
         let good = QualityScore(aestheticScore: 0.4, isUtility: false, blurScore: 0.8, exposureScore: 0.5)
-        XCTAssertEqual(good.grade, .good)
+        XCTAssertEqual(good.grade, .B)
 
         let utility = QualityScore(aestheticScore: 0.9, isUtility: true, blurScore: 0.95, exposureScore: 0.5)
-        XCTAssertEqual(utility.grade, .utility)
+        XCTAssertEqual(utility.grade, .U)
     }
 
     func testBlurDetection() {

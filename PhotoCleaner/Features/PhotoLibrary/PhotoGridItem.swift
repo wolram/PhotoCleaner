@@ -69,7 +69,7 @@ struct PhotoComparisonItem: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            ZStack(alignment: .topLeading) {
+            ZStack {
                 CachedThumbnailImage(
                     assetId: photo.id,
                     size: CGSize(width: 400, height: 400)
@@ -82,38 +82,46 @@ struct PhotoComparisonItem: View {
                         .stroke(isSelected ? Color.accentColor : Color.clear, lineWidth: 3)
                 }
 
-                if isBest {
-                    Label("Best", systemImage: "star.fill")
-                        .font(.caption)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(.green)
-                        .foregroundStyle(.white)
-                        .clipShape(Capsule())
-                        .padding(8)
+                // Best badge (top left)
+                VStack {
+                    HStack {
+                        if isBest {
+                            Label("Best", systemImage: "star.fill")
+                                .font(.caption)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(.green)
+                                .foregroundStyle(.white)
+                                .clipShape(Capsule())
+                        }
+                        Spacer()
+                    }
+                    Spacer()
                 }
+                .padding(8)
+
+                // Grade indicator (top right)
+                VStack {
+                    HStack {
+                        Spacer()
+                        if let score = photo.qualityScore {
+                            ScoreIndicator(score: score.composite, size: .small)
+                                .padding(4)
+                                .background(.ultraThinMaterial)
+                                .clipShape(Circle())
+                        }
+                    }
+                    Spacer()
+                }
+                .padding(8)
             }
 
-            // Photo info
-            VStack(spacing: 4) {
-                Text(photo.formattedDimensions)
-                    .font(.caption)
-
-                Text(photo.formattedFileSize)
+            // Photo metadata panel (bottom)
+            HStack {
+                Text("\(Int(photo.dimensions.width))×\(Int(photo.dimensions.height))")
                     .font(.caption)
                     .foregroundStyle(.secondary)
-
-                if let score = photo.qualityScore {
-                    HStack(spacing: 8) {
-                        ScoreIndicator(score: score.composite, showLabel: true, size: .small)
-                    }
-                }
-
-                if let date = photo.creationDate {
-                    Text(date.formatted(date: .abbreviated, time: .shortened))
-                        .font(.caption2)
-                        .foregroundStyle(.tertiary)
-                }
+                Spacer()
             }
         }
         .padding(8)
@@ -138,3 +146,4 @@ struct PhotoComparisonItem: View {
     }
     .padding()
 }
+

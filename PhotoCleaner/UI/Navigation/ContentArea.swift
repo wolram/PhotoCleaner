@@ -16,6 +16,8 @@ struct ContentArea: View {
                 SimilarPhotosView()
             case .quality:
                 QualityReviewView()
+            case .battle:
+                BattleSelectionView()
             case .categories:
                 CategoriesView()
             }
