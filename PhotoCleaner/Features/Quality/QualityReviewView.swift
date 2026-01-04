@@ -145,7 +145,7 @@ struct QualityReviewView: View {
     }
 
     private func qualityPhotoItem(_ entity: PhotoAssetEntity) -> some View {
-        let photo = PhotoAsset(from: entity)
+        _ = PhotoAsset(from: entity)
         let isSelected = selection.contains(entity.localIdentifier)
         let grade = gradeFor(entity)
 

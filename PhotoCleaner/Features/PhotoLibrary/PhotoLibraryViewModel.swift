@@ -19,17 +19,13 @@ final class PhotoLibraryViewModel: ObservableObject {
         isLoading = true
         defer { isLoading = false }
 
-        do {
-            // Get all identifiers first
-            allIdentifiers = await PhotoLibraryService.shared.fetchAllAssetIdentifiers()
-            currentOffset = 0
-            photos = []
+        // Get all identifiers first
+        allIdentifiers = await PhotoLibraryService.shared.fetchAllAssetIdentifiers()
+        currentOffset = 0
+        photos = []
 
-            // Load first batch
-            await loadBatch()
-        } catch {
-            self.error = error
-        }
+        // Load first batch
+        await loadBatch()
     }
 
     func loadMore() async {
