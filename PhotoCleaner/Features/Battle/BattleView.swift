@@ -1,15 +1,31 @@
 import SwiftUI
 import SwiftData
 
+/// View principal do modo Battle (torneio de fotos)
+/// Permite ao usuário escolher sua foto favorita em uma série de batalhas eliminatórias
 struct BattleView: View {
+    // MARK: - Propriedades
+    
+    /// Grupo de fotos que participará do torneio
     let group: PhotoGroupEntity
 
+    /// ViewModel que gerencia a lógica do torneio
     @StateObject private var viewModel = BattleViewModel()
+    
+    /// Ação para fechar esta view
     @Environment(\.dismiss) private var dismiss
+    
+    /// Controla se o alert de erro está sendo exibido
+    @State private var showingError = false
+    
+    /// Mensagem de erro a ser exibida no alert
+    @State private var errorMessage = ""
 
+    // MARK: - Body
+    
     var body: some View {
         ZStack {
-            // Background gradient
+            // Gradiente de fundo (preto com toque roxo)
             LinearGradient(
                 colors: [Color.black.opacity(0.9), Color.purple.opacity(0.3), Color.black.opacity(0.9)],
                 startPoint: .topLeading,
@@ -17,28 +33,56 @@ struct BattleView: View {
             )
             .ignoresSafeArea()
 
+            // Exibe diferentes telas baseado na fase do torneio
             switch viewModel.phase {
             case .notStarted:
-                startScreen
+                startScreen // Tela inicial de apresentação
             case .fighting, .roundWon:
-                battleContent
+                battleContent // Tela de batalha ativa
             case .tournamentComplete:
-                championScreen
+                championScreen // Tela do campeão
             }
 
-            // Confetti overlay
+            // Overlay de confete (aparece quando há um campeão)
             if viewModel.showConfetti {
                 ConfettiView()
                     .ignoresSafeArea()
-                    .allowsHitTesting(false)
+                    .allowsHitTesting(false) // Não bloqueia interações
             }
         }
         .onAppear {
-            viewModel.setupTournament(from: group)
+            setupTournament()
+        }
+        .alert("Erro", isPresented: $showingError) {
+            Button("OK") {
+                dismiss()
+            }
+        } message: {
+            Text(errorMessage)
+        }
+    }
+    
+    // MARK: - Métodos Auxiliares
+    
+    /// Configura e valida o torneio antes de iniciar
+    private func setupTournament() {
+        // Valida que há fotos suficientes (mínimo 2)
+        guard group.photos.count >= 2 else {
+            errorMessage = "Este grupo precisa de pelo menos 2 fotos para iniciar uma batalha."
+            showingError = true
+            return
+        }
+        
+        viewModel.setupTournament(from: group)
+        
+        // Verifica se o setup funcionou corretamente
+        if viewModel.photos.isEmpty {
+            errorMessage = "Não foi possível carregar as fotos para esta batalha. Tente executar uma nova análise."
+            showingError = true
         }
     }
 
-    // MARK: - Start Screen
+    // MARK: - Tela Inicial
 
     private var startScreen: some View {
         VStack(spacing: 24) {

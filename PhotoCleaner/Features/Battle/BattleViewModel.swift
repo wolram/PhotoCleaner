@@ -150,31 +150,51 @@ final class BattleViewModel: ObservableObject {
     // MARK: - Setup
 
     func setupTournament(from group: PhotoGroupEntity) {
+        // Reset state first
+        reset()
+        
         // Get all photos sorted by quality score (lowest first)
-        let sortedPhotos = group.photos.sorted {
+        let sortedPhotos = Array(group.photos).sorted {
             $0.compositeQualityScore < $1.compositeQualityScore
         }
 
-        guard sortedPhotos.count >= 2 else { return }
+        guard sortedPhotos.count >= 2 else {
+            print("⚠️ BattleViewModel: Not enough photos to start tournament (need at least 2, got \(sortedPhotos.count))")
+            return
+        }
 
         self.photos = sortedPhotos
+        
+        print("✅ BattleViewModel: Starting tournament with \(sortedPhotos.count) photos")
 
         // Build tournament bracket
         buildBracket(from: sortedPhotos.map { $0.localIdentifier })
 
         // Start the tournament
-        if let firstMatch = rounds.first?.matches.first {
-            currentMatch = firstMatch
-            phase = .fighting
+        guard !rounds.isEmpty, let firstMatch = rounds.first?.matches.first else {
+            print("⚠️ BattleViewModel: Failed to create tournament rounds")
+            return
         }
+        
+        currentMatch = firstMatch
+        phase = .fighting
+        
+        print("✅ BattleViewModel: Tournament started with \(rounds.count) rounds")
     }
 
     private func buildBracket(from photoIds: [String]) {
+        guard photoIds.count >= 2 else {
+            print("⚠️ BattleViewModel: Cannot build bracket with less than 2 photos")
+            return
+        }
+        
         var remainingIds = photoIds
         rounds = []
 
         // Calculate number of rounds needed
         var roundNumber = 1
+        
+        print("🏆 BattleViewModel: Building bracket with \(photoIds.count) photos...")
 
         while remainingIds.count > 1 {
             var roundMatches: [BattleMatch] = []
@@ -191,7 +211,11 @@ final class BattleViewModel: ObservableObject {
 
             // If odd number, bye goes to next round
             if !remainingIds.isEmpty {
-                nextRoundIds.append(remainingIds.removeFirst())
+                let byeId = remainingIds.removeFirst()
+                nextRoundIds.append(byeId)
+                print("  📍 Round \(roundNumber): \(roundMatches.count) matches + 1 bye")
+            } else {
+                print("  📍 Round \(roundNumber): \(roundMatches.count) matches")
             }
 
             rounds.append(TournamentRound(roundNumber: roundNumber, matches: roundMatches))
@@ -201,6 +225,8 @@ final class BattleViewModel: ObservableObject {
 
         currentRoundIndex = 0
         currentMatchIndex = 0
+        
+        print("✅ BattleViewModel: Bracket built with \(rounds.count) rounds")
     }
 
     // MARK: - Battle Actions

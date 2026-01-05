@@ -119,6 +119,16 @@ struct BattleSelectionView: View {
 
     private func groupCard(group: PhotoGroupEntity, type: GroupType) -> some View {
         Button {
+            // Validate before showing battle
+            let validPhotos = Array(group.photos).filter { photo in
+                !photo.localIdentifier.isEmpty
+            }
+            
+            if validPhotos.count < 2 {
+                print("⚠️ Group has insufficient valid photos: \(validPhotos.count)")
+                return
+            }
+            
             selectedGroup = group
             showingBattle = true
         } label: {
