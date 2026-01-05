@@ -85,6 +85,7 @@ struct PhotoLibraryView: View {
         .overlay(alignment: .bottom) {
             if viewModel.isLoading {
                 ProgressView()
+                    .controlSize(.regular)
                     .padding()
                     .background(.regularMaterial)
                     .clipShape(Capsule())
@@ -96,6 +97,7 @@ struct PhotoLibraryView: View {
     private var loadingView: some View {
         VStack(spacing: 16) {
             ProgressView()
+                .controlSize(.large)
             Text("Loading photos...")
                 .foregroundStyle(.secondary)
         }

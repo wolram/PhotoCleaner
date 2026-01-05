@@ -150,9 +150,13 @@ final class ScanViewModel: ObservableObject {
                     // Save to disk
                     try? modelContext.save()
 
+                    #if DEBUG
                     print("✅ Saved \(results.count) photos, \(currentDuplicateGroups.count) duplicate groups, \(currentSimilarGroups.count) similar groups")
+                    #endif
                 } else {
+                    #if DEBUG
                     print("⚠️ No modelContext - results not persisted!")
+                    #endif
                 }
 
                 // Calculate space recoverable using actual file sizes
@@ -188,7 +192,9 @@ final class ScanViewModel: ObservableObject {
                     duration: duration
                 )
 
+                #if DEBUG
                 print("📊 Scan complete: \(self.processedCount) processed, \(self.errorCount) errors")
+                #endif
 
             } catch {
                 if !Task.isCancelled {
@@ -230,11 +236,15 @@ final class ScanViewModel: ObservableObject {
                 await processResultIncrementally(result, appState: appState)
             }
 
-            // Update progress
-            let progress = Double(batchEnd) / Double(totalPhotos)
-            appState.scanProgress = progress * 0.95
-            appState.photosScanned = batchEnd
-            appState.statusMessage = "Analyzing \(batchEnd)/\(totalPhotos) - Found \(currentDuplicateGroups.count) duplicate groups"
+            // Update progress and counts in a single batch update
+            await MainActor.run {
+                let progress = Double(batchEnd) / Double(totalPhotos)
+                appState.scanProgress = progress * 0.95
+                appState.photosScanned = batchEnd
+                appState.duplicatesFound = currentDuplicateGroups.count
+                appState.similarGroupsFound = currentSimilarGroups.count
+                appState.statusMessage = "Analyzing \(batchEnd)/\(totalPhotos) - Found \(currentDuplicateGroups.count) duplicate groups"
+            }
         }
 
         return results
@@ -251,14 +261,14 @@ final class ScanViewModel: ObservableObject {
                from: fpData
            ) {
             // Check for duplicates against existing feature prints
-            await checkForDuplicates(id: result.photoId, featurePrint: fp, appState: appState)
+            await checkForDuplicates(id: result.photoId, featurePrint: fp)
             accumulatedFeaturePrints.append((result.photoId, fp))
         }
 
         // Extract and store hash
         if let hash = result.perceptualHash {
             // Check for similar photos against existing hashes
-            checkForSimilar(id: result.photoId, hash: hash, appState: appState)
+            checkForSimilar(id: result.photoId, hash: hash)
             accumulatedHashes.append((result.photoId, hash))
         }
 
@@ -271,18 +281,12 @@ final class ScanViewModel: ObservableObject {
                 exposureScore: result.exposureScore ?? 0.5
             )
             accumulatedQualityScores.append((result.photoId, score))
-
-            // Check for low quality immediately
-            if score.composite < 0.3 {
-                appState.lowQualityFound += 1
-            }
         }
     }
 
     private func checkForDuplicates(
         id: String,
-        featurePrint: VNFeaturePrintObservation,
-        appState: AppState
+        featurePrint: VNFeaturePrintObservation
     ) async {
         var foundDuplicateGroupIndex: Int? = nil
 
@@ -319,7 +323,6 @@ final class ScanViewModel: ObservableObject {
                     if distance < duplicateThreshold {
                         // Create new group
                         currentDuplicateGroups.append([existingId, id])
-                        appState.duplicatesFound = currentDuplicateGroups.count
                         return
                     }
                 } catch {
@@ -327,17 +330,11 @@ final class ScanViewModel: ObservableObject {
                 }
             }
         }
-
-        // Update count if we added to existing group
-        if foundDuplicateGroupIndex != nil {
-            appState.duplicatesFound = currentDuplicateGroups.count
-        }
     }
 
     private func checkForSimilar(
         id: String,
-        hash: UInt64,
-        appState: AppState
+        hash: UInt64
     ) {
         let similarityThreshold = 8 // Hamming distance threshold
 
@@ -365,7 +362,6 @@ final class ScanViewModel: ObservableObject {
                     currentSimilarGroups.append([existingId, id])
                 }
 
-                appState.similarGroupsFound = currentSimilarGroups.count
                 return
             }
         }

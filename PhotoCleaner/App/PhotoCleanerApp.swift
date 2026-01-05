@@ -48,11 +48,11 @@ struct PhotoCleanerApp: App {
     }
     
     private func setupApp() {
-        // Ensure bundle identifier is set
+        // App initialization complete
+        #if DEBUG
         if let bundleID = Bundle.main.bundleIdentifier {
             print("✅ App Bundle Identifier: \(bundleID)")
-        } else {
-            print("⚠️ Warning: Bundle identifier not found")
         }
+        #endif
     }
 }
