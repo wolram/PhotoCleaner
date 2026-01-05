@@ -22,6 +22,9 @@ struct PhotoCleanerApp: App {
         } catch {
             fatalError("Failed to initialize SwiftData container: \(error)")
         }
+        
+        // Configure the app - must be called after all stored properties are initialized
+        setupApp()
     }
 
     var body: some Scene {
@@ -30,8 +33,8 @@ struct PhotoCleanerApp: App {
                 .modelContainer(modelContainer)
                 .environmentObject(appState)
         }
-        .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentMinSize)
+        .defaultSize(width: 1200, height: 800)
         .commands {
             SidebarCommands()
             ToolbarCommands()
@@ -41,6 +44,15 @@ struct PhotoCleanerApp: App {
         Settings {
             SettingsView()
                 .environmentObject(appState)
+        }
+    }
+    
+    private func setupApp() {
+        // Ensure bundle identifier is set
+        if let bundleID = Bundle.main.bundleIdentifier {
+            print("✅ App Bundle Identifier: \(bundleID)")
+        } else {
+            print("⚠️ Warning: Bundle identifier not found")
         }
     }
 }
