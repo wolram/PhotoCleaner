@@ -50,7 +50,9 @@ struct BattleView: View {
                     .allowsHitTesting(false) // Não bloqueia interações
             }
         }
-        .onAppear {
+        .task {
+            // Pequeno delay para garantir que o grupo está completamente carregado do SwiftData
+            try? await Task.sleep(nanoseconds: 100_000_000) // 0.1 segundo
             setupTournament()
         }
         .alert("Erro", isPresented: $showingError) {
@@ -66,19 +68,34 @@ struct BattleView: View {
     
     /// Configura e valida o torneio antes de iniciar
     private func setupTournament() {
+        print("🎮 BattleView: setupTournament called, group has \(group.photos.count) photos")
+
         // Valida que há fotos suficientes (mínimo 2)
         guard group.photos.count >= 2 else {
+            print("⚠️ BattleView: Not enough photos (\(group.photos.count))")
             errorMessage = "Este grupo precisa de pelo menos 2 fotos para iniciar uma batalha."
             showingError = true
             return
         }
-        
+
+        // Valida que as fotos têm localIdentifiers válidos
+        let validPhotos = group.photos.filter { !$0.localIdentifier.isEmpty }
+        guard validPhotos.count >= 2 else {
+            print("⚠️ BattleView: Not enough valid photos (\(validPhotos.count))")
+            errorMessage = "As fotos do grupo não estão válidas. Tente executar uma nova análise."
+            showingError = true
+            return
+        }
+
         viewModel.setupTournament(from: group)
-        
+
         // Verifica se o setup funcionou corretamente
         if viewModel.photos.isEmpty {
+            print("⚠️ BattleView: ViewModel photos is empty after setup")
             errorMessage = "Não foi possível carregar as fotos para esta batalha. Tente executar uma nova análise."
             showingError = true
+        } else {
+            print("✅ BattleView: Tournament setup successful with \(viewModel.photos.count) photos")
         }
     }
 
