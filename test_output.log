@@ -1,0 +1,1241 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -scheme PhotoCleaner -destination platform=macOS
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00008103-001625520EC3001E, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00008103-001625520EC3001E, name:My Mac }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'PhotoCleanerTests' in project 'PhotoCleaner'
+        ➜ Explicit dependency on target 'PhotoCleaner' in project 'PhotoCleaner'
+    Target 'PhotoCleaner' in project 'PhotoCleaner' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: d601108b77bde50ef7ef9913f7a30bf6
+Build description path: /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/XCBuildData/d601108b77bde50ef7ef9913f7a30bf6.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk /Users/wolram/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache
+    cd /Users/wolram/Developer/PhotoCleaner/PhotoCleaner.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -o /Users/wolram/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache
+
+MkDir /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /bin/mkdir -p /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns
+
+MkDir /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /bin/mkdir -p /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-project-headers.hmap (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-project-headers.hmap
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests.DependencyMetadataFileList (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests.hmap (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests.hmap
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/empty-PhotoCleanerTests.plist (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/empty-PhotoCleanerTests.plist
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests.DependencyStaticMetadataFileList (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-own-target-headers.hmap (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-generated-files.hmap (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-generated-files.hmap
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-all-target-headers.hmap (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-all-non-framework-target-headers.hmap (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests_const_extract_protocols.json (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.SwiftFileList (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.SwiftFileList
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.SwiftConstValuesFileList (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.LinkFileList (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.LinkFileList
+
+WriteAuxiliaryFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-OutputFileMap.json (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    write-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-OutputFileMap.json
+
+MkDir /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/MacOS (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /bin/mkdir -p /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/MacOS
+
+MkDir /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /bin/mkdir -p /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents
+
+MkDir /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /bin/mkdir -p /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest
+
+ProcessProductPackaging /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/PhotoCleaner.entitlements /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner.app.xcent (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Entitlements:
+    
+    {
+    "com.apple.security.get-task-allow" = 1;
+}
+    
+    builtin-productPackagingUtility /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/PhotoCleaner.entitlements -entitlements -format xml -o /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner.app.xcent
+
+ProcessProductPackagingDER /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner.app.xcent /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner.app.xcent.der (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /usr/bin/derq query -f xml -i /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner.app.xcent -o /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner.app.xcent.der --raw
+
+Ld /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/__preview.dylib normal (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.0 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -O0 -L/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -F/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -install_name @rpath/PhotoCleaner.debug.dylib -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner_dependency_info.dat -Xlinker -no_adhoc_codesign -o /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/__preview.dylib
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/libXCTestSwiftSupport.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/libXCTestBundleInject.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libXCTestBundleInject.dylib (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libXCTestBundleInject.dylib /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTestSupport.framework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCUnit.framework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/XCUnit.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/XCUnit.framework /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCUIAutomation.framework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCUIAutomation.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCUIAutomation.framework /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTestCore.framework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+ProcessInfoPlistFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Info.plist /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Info.plist (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-infoPlistUtility /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PkgInfo -expandbuildsettings -platform macosx -additionalcontentfile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/assetcatalog_generated_info.plist -o /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Info.plist
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTest.framework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTAutomationSupport.framework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/Testing.framework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/Testing.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/Testing.framework /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/libXCTestSwiftSupport.dylib (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/libXCTestSwiftSupport.dylib
+/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/libXCTestSwiftSupport.dylib: replacing existing signature
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/libXCTestBundleInject.dylib (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/libXCTestBundleInject.dylib
+/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/libXCTestBundleInject.dylib: replacing existing signature
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCUnit.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCUnit.framework
+/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCUnit.framework: replacing existing signature
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTestSupport.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTestSupport.framework
+/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTestSupport.framework: replacing existing signature
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTestCore.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTestCore.framework
+/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTestCore.framework: replacing existing signature
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCUIAutomation.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCUIAutomation.framework
+/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCUIAutomation.framework: replacing existing signature
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTest.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTest.framework
+/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTest.framework: replacing existing signature
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTAutomationSupport.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTAutomationSupport.framework
+/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/XCTAutomationSupport.framework: replacing existing signature
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/Testing.framework (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/Testing.framework
+/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks/Testing.framework: replacing existing signature
+
+SwiftDriver PhotoCleaner normal arm64 com.apple.xcode.tools.swift.compiler (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name PhotoCleaner -Onone -enforce-exclusivity\=checked @/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.SwiftFileList -DDEBUG -enable-upcoming-feature StrictConcurrency -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos14.0 -g -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -F /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner_const_extract_protocols.json -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-generated-files.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-own-target-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-all-target-headers.hmap -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-project-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/include -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/DerivedSources-normal/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/DerivedSources/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner-Swift.h -working-directory /Users/wolram/Developer/PhotoCleaner -experimental-emit-module-separately -disable-cmo
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ PhotoCleaner (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+EmitSwiftModule normal arm64 (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX5_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0025DuplicatesViewswift_jqFBgfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX6_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0028SimilarPhotosViewswift_IxAFhfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Core/Utilities/ImageProcessor.swift:5:16: warning: static property 'shared' is not concurrency-safe because non-'Sendable' type 'ImageProcessor' may have shared mutable state; this is an error in the Swift 6 language mode
+    static let shared = ImageProcessor()
+               ^
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Core/Utilities/ImageProcessor.swift:4:13: note: class 'ImageProcessor' does not conform to the 'Sendable' protocol
+final class ImageProcessor {
+            ^
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Core/Utilities/ImageProcessor.swift:5:16: note: add '@MainActor' to make static property 'shared' part of global actor 'MainActor'
+    static let shared = ImageProcessor()
+               ^
+    @MainActor 
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Core/Utilities/ImageProcessor.swift:5:16: note: disable concurrency-safety checks if accesses are protected by an external synchronization mechanism
+    static let shared = ImageProcessor()
+               ^
+    nonisolated(unsafe) 
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Core/Utilities/MemoryManager.swift:5:16: warning: static property 'shared' is not concurrency-safe because non-'Sendable' type 'MemoryManager' may have shared mutable state; this is an error in the Swift 6 language mode
+    static let shared = MemoryManager()
+               ^
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Core/Utilities/MemoryManager.swift:4:13: note: class 'MemoryManager' does not conform to the 'Sendable' protocol
+final class MemoryManager {
+            ^
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Core/Utilities/MemoryManager.swift:5:16: note: add '@MainActor' to make static property 'shared' part of global actor 'MainActor'
+    static let shared = MemoryManager()
+               ^
+    @MainActor 
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Core/Utilities/MemoryManager.swift:5:16: note: disable concurrency-safety checks if accesses are protected by an external synchronization mechanism
+    static let shared = MemoryManager()
+               ^
+    nonisolated(unsafe) 
+
+SwiftCompile normal arm64 Compiling\ ScanProgressView.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Scanning/ScanProgressView.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Scanning/ScanProgressView.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX5_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0025DuplicatesViewswift_jqFBgfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX6_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0028SimilarPhotosViewswift_IxAFhfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+
+SwiftCompile normal arm64 Compiling\ LoadingOverlay.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Components/LoadingOverlay.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Components/LoadingOverlay.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX5_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0025DuplicatesViewswift_jqFBgfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX6_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0028SimilarPhotosViewswift_IxAFhfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+
+SwiftCompile normal arm64 Compiling\ ScanView.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Scanning/ScanView.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Scanning/ScanView.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX5_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0025DuplicatesViewswift_jqFBgfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX6_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0028SimilarPhotosViewswift_IxAFhfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+
+SwiftCompile normal arm64 Compiling\ MainSidebar.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX6_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV15duplicateGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0022MainSidebarswift_tiAIefMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner11MainSidebarV13similarGroups33_EE757EC69074065D0E771284264FCAD3LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/UI/Navigation/MainSidebar.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX5_16_5QueryfMp_9PredicatefMf1_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV15duplicateGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:5:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0030BattleSelectionViewswift_eDAEifMX8_16_5QueryfMp_9PredicatefMf2_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner19BattleSelectionViewV13similarGroups33_C0F34312339C4C5A25E9E031B4206061LL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Battle/BattleSelectionView.swift:8:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0025DuplicatesViewswift_jqFBgfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+@__swiftmacro_12PhotoCleaner14DuplicatesViewV15duplicateGroups33_57263C7989EB87F00624AFFAD223395ELL5QueryfMp_.swift:1:116: note: in expansion of macro 'Predicate' here
+private(set) var _duplicateGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Duplicates/DuplicatesView.swift:6:5: note: in expansion of macro 'Query' on property 'duplicateGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "duplicate" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+@__swiftmacro_12PhotoCleaner0028SimilarPhotosViewswift_IxAFhfMX6_16_5QueryfMp_9PredicatefMf0_.swift:5:22: warning: type 'ReferenceWritableKeyPath<PhotoGroupEntity, String>' does not conform to the 'Sendable' protocol; this is an error in the Swift 6 language mode
+            keyPath: \.groupType
+                     ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+@__swiftmacro_12PhotoCleaner17SimilarPhotosViewV13similarGroups33_5409B49393D1188D5FC23A8619E90F1ALL5QueryfMp_.swift:1:114: note: in expansion of macro 'Predicate' here
+private(set) var _similarGroups: SwiftData.Query<[PhotoGroupEntity].Element, [PhotoGroupEntity]> = .init(filter: #Predicate<PhotoGroupEntity> {
+                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/wolram/Developer/PhotoCleaner/PhotoCleaner/Features/Similar/SimilarPhotosView.swift:6:5: note: in expansion of macro 'Query' on property 'similarGroups' here
+    @Query(filter: #Predicate<PhotoGroupEntity> { $0.groupType == "similar" })
+    ^
+Swift.ReferenceWritableKeyPath:1:14: note: generic class 'ReferenceWritableKeyPath' does not conform to the 'Sendable' protocol
+public class ReferenceWritableKeyPath<Root, Value> : WritableKeyPath<Root, Value> {
+             ^
+
+SwiftDriverJobDiscovery normal arm64 Compiling MainSidebar.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ScanProgressView.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Compiling LoadingOverlay.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ScanView.swift (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for PhotoCleaner (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+SwiftDriver\ Compilation\ Requirements PhotoCleaner normal arm64 com.apple.xcode.tools.swift.compiler (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name PhotoCleaner -Onone -enforce-exclusivity\=checked @/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.SwiftFileList -DDEBUG -enable-upcoming-feature StrictConcurrency -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos14.0 -g -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -F /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner_const_extract_protocols.json -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-generated-files.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-own-target-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-all-target-headers.hmap -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-project-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/include -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/DerivedSources-normal/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/DerivedSources/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner-Swift.h -working-directory /Users/wolram/Developer/PhotoCleaner -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver\ Compilation PhotoCleaner normal arm64 com.apple.xcode.tools.swift.compiler (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name PhotoCleaner -Onone -enforce-exclusivity\=checked @/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.SwiftFileList -DDEBUG -enable-upcoming-feature StrictConcurrency -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos14.0 -g -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -F /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner_const_extract_protocols.json -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-generated-files.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-own-target-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-all-target-headers.hmap -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-project-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/include -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/DerivedSources-normal/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/DerivedSources/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner-Swift.h -working-directory /Users/wolram/Developer/PhotoCleaner -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.swiftsourceinfo (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.swiftsourceinfo /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.swiftmodule/arm64-apple-macos.abi.json /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.abi.json (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.abi.json /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.swiftmodule/arm64-apple-macos.abi.json
+
+Ld /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner.debug.dylib normal (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.0 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -O0 -L/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -F/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -filelist /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.LinkFileList -install_name @rpath/PhotoCleaner.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/../Frameworks -Xlinker -object_path_lto -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.swiftmodule @/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner.debug.dylib
+
+SwiftDriver PhotoCleanerTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name PhotoCleanerTests -Onone -enforce-exclusivity\=checked @/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.SwiftFileList -DDEBUG -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-upcoming-feature StrictConcurrency -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos14.0 -g -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-generated-files.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-own-target-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-project-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/include -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources-normal/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-Swift.h -working-directory /Users/wolram/Developer/PhotoCleaner -experimental-emit-module-separately -disable-cmo
+
+ConstructStubExecutorLinkFileList /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-ExecutorLinkFileList-normal-arm64.txt (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    construct-stub-executor-link-file-list /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'PhotoCleaner' from project 'PhotoCleaner')
+
+Ld /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner normal (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -O0 -L/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -F/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/../Frameworks -rdynamic -Xlinker -no_deduplicate -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner-ExecutorLinkFileList-normal-arm64.txt /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner
+
+CopySwiftLibs /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner.debug.dylib --scan-folder /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks --scan-folder /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns --scan-folder /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Library/SystemExtensions --scan-folder /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Extensions --platform macosx --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+
+ExtractAppIntentsMetadata (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name PhotoCleaner --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk --xcode-version 17C52 --platform-family macOS --deployment-target 14.0 --bundle-identifier com.photocleaner.app --output /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/Resources --target-triple arm64-apple-macos14.0 --binary-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner --dependency-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner_dependency_info.dat --stringsdata-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.SwiftFileList --metadata-file-list /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner.DependencyMetadataFileList --static-metadata-file-list /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner.DependencyStaticMetadataFileList --swift-const-vals-list /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/Objects-normal/arm64/PhotoCleaner.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-01-09 13:53:16.333 appintentsmetadataprocessor[14449:3477965] Starting appintentsmetadataprocessor export
+2026-01-09 13:53:16.348 appintentsmetadataprocessor[14449:3477965] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+ProcessInfoPlistFile /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/Info.plist /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/empty-PhotoCleanerTests.plist (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-infoPlistUtility /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/empty-PhotoCleanerTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -platform macosx -o /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/Info.plist
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-6RWSS27O6DMZ867I2H11ZSC52.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-127G5DON77VIZ.swiftmodule
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-9I20623MURLLRHUNKVDA6HJYB.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-28BSZOQQBON7S.swiftmodule
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ PhotoCleanerTests (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+EmitSwiftModule normal arm64 (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+
+SwiftCompile normal arm64 Compiling\ PerceptualHashTests.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/PerceptualHashTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/PerceptualHashTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+
+SwiftCompile normal arm64 Compiling\ ClusteringTests.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/ClusteringTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/ClusteringTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+
+SwiftCompile normal arm64 Compiling\ BatchProcessingServiceTests.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/BatchProcessingServiceTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/BatchProcessingServiceTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+
+SwiftCompile normal arm64 Compiling\ DuplicateDetectionServiceTests.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/DuplicateDetectionServiceTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/DuplicateDetectionServiceTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+
+SwiftCompile normal arm64 Compiling\ SimilarityTests.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/SimilarityTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/SimilarityTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+
+SwiftCompile normal arm64 Compiling\ QualityAssessmentServiceTests.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+/Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift:101:13: warning: mutation of captured var 'progressUpdates' in concurrently-executing code; this is an error in the Swift 6 language mode
+            progressUpdates.append(progress)
+            ^
+
+SwiftCompile normal arm64 Compiling\ QualityScoreTests.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityScoreTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityScoreTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+
+SwiftCompile normal arm64 Compiling\ BestPhotoSelectorTests.swift /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/BestPhotoSelectorTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+SwiftCompile normal arm64 /Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/BestPhotoSelectorTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for PhotoCleanerTests (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftDriver\ Compilation\ Requirements PhotoCleanerTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name PhotoCleanerTests -Onone -enforce-exclusivity\=checked @/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.SwiftFileList -DDEBUG -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-upcoming-feature StrictConcurrency -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos14.0 -g -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-generated-files.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-own-target-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-project-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/include -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources-normal/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-Swift.h -working-directory /Users/wolram/Developer/PhotoCleaner -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling PerceptualHashTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftMergeGeneratedHeaders /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources/PhotoCleanerTests-Swift.h /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-Swift.h (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-swiftHeaderTool -arch arm64 /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-Swift.h -o /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources/PhotoCleanerTests-Swift.h
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleanerTests.swiftmodule/arm64-apple-macos.swiftmodule /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftmodule (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftmodule /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleanerTests.swiftmodule/arm64-apple-macos.swiftmodule
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleanerTests.swiftmodule/arm64-apple-macos.swiftdoc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftdoc (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftdoc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleanerTests.swiftmodule/arm64-apple-macos.swiftdoc
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleanerTests.swiftmodule/arm64-apple-macos.abi.json /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.abi.json (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.abi.json /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleanerTests.swiftmodule/arm64-apple-macos.abi.json
+
+Copy /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleanerTests.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftsourceinfo (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftsourceinfo /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleanerTests.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling QualityScoreTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Compiling SimilarityTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ClusteringTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Compiling DuplicateDetectionServiceTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Compiling BatchProcessingServiceTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Compiling QualityAssessmentServiceTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftDriverJobDiscovery normal arm64 Compiling BestPhotoSelectorTests.swift (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+
+SwiftDriver\ Compilation PhotoCleanerTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name PhotoCleanerTests -Onone -enforce-exclusivity\=checked @/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.SwiftFileList -DDEBUG -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-upcoming-feature StrictConcurrency -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos14.0 -g -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/wolram/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-generated-files.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-own-target-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests-project-headers.hmap -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/include -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources-normal/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources/arm64 -Xcc -I/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-Swift.h -working-directory /Users/wolram/Developer/PhotoCleaner -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/MacOS/PhotoCleanerTests normal (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.0 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -O0 -L/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -filelist /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path/../Frameworks -Xlinker -rpath -Xlinker @executable_path/../Frameworks -bundle_loader /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner -Xlinker -object_path_lto -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.swiftmodule @/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests-linker-args.resp -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/MacOS/PhotoCleanerTests
+
+CopySwiftLibs /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/MacOS/PhotoCleanerTests --scan-folder /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/Frameworks --scan-folder /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/PlugIns --scan-folder /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/Library/SystemExtensions --scan-folder /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/Extensions --platform macosx --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+
+ExtractAppIntentsMetadata (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name PhotoCleanerTests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk --xcode-version 17C52 --platform-family macOS --deployment-target 14.0 --bundle-identifier com.photocleaner.tests --output /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/Resources --target-triple arm64-apple-macos14.0 --binary-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest/Contents/MacOS/PhotoCleanerTests --dependency-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests_dependency_info.dat --stringsdata-file /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.SwiftFileList --metadata-file-list /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests.DependencyMetadataFileList --static-metadata-file-list /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/PhotoCleanerTests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleanerTests.build/Objects-normal/arm64/PhotoCleanerTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-01-09 13:53:18.266 appintentsmetadataprocessor[14471:3478042] Starting appintentsmetadataprocessor export
+2026-01-09 13:53:18.268 appintentsmetadataprocessor[14471:3478042] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest
+
+RegisterExecutionPolicyException /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-RegisterExecutionPolicyException /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest
+
+Touch /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest (in target 'PhotoCleanerTests' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /usr/bin/touch -c /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/PlugIns/PhotoCleanerTests.xctest
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner.debug.dylib (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/PhotoCleaner.debug.dylib
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/__preview.dylib (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app/Contents/MacOS/__preview.dylib
+
+CodeSign /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Intermediates.noindex/PhotoCleaner.build/Debug/PhotoCleaner.build/PhotoCleaner.app.xcent --timestamp\=none --generate-entitlement-der /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app
+
+Validate /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    builtin-validationUtility /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app -no-validate-extension -infoplist-subpath Contents/Info.plist
+
+RegisterWithLaunchServices /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app (in target 'PhotoCleaner' from project 'PhotoCleaner')
+    cd /Users/wolram/Developer/PhotoCleaner
+    /System/Library/Frameworks/CoreServices.framework/Versions/Current/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister -f -R -trusted /Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Build/Products/Debug/PhotoCleaner.app
+
+CoreData: annotation: Core Data multi-threading assertions enabled.
+✅ App Bundle Identifier: com.photocleaner.app
+2026-01-09 13:53:24.224506-0300 PhotoCleaner[14510:3478323] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/0_/x58qswks53ldnd4b5v46w5m00000gn/T/com.photocleaner.app.savedState
+Test Suite 'All tests' started at 2026-01-09 13:53:27.467.
+Test Suite 'PhotoCleanerTests.xctest' started at 2026-01-09 13:53:27.467.
+Test Suite 'BatchProcessingServiceTests' started at 2026-01-09 13:53:27.468.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testCancelAndReset]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testCancelAndReset]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testCancelState]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testCancelState]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testConcurrentConfiguration]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testConcurrentConfiguration]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testConfigurationSequence]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testConfigurationSequence]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testMultipleCancelCalls]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testMultipleCancelCalls]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testMultipleResetCalls]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testMultipleResetCalls]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorAnalysisFailedDescription]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorAnalysisFailedDescription]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorAssetNotFoundDescription]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorAssetNotFoundDescription]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorCancelledDescription]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorCancelledDescription]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorDescriptions]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorDescriptions]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorImageLoadFailedDescription]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingErrorImageLoadFailedDescription]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingResultInitialization]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingResultInitialization]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingResultMutability]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingResultMutability]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingResultWithError]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingResultWithError]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingResultWithFullData]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testProcessingResultWithFullData]' passed (0.007 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testResetAfterCancel]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testResetAfterCancel]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testServiceSingleton]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testServiceSingleton]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testSetMaxConcurrencyBoundaries]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testSetMaxConcurrencyBoundaries]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testSetMaxConcurrency]' started.
+Test Case '-[PhotoCleanerTests.BatchProcessingServiceTests testSetMaxConcurrency]' passed (0.001 seconds).
+Test Suite 'BatchProcessingServiceTests' passed at 2026-01-09 13:53:27.616.
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.021 (0.149) seconds
+Test Suite 'BestPhotoSelectorTests' started at 2026-01-09 13:53:27.619.
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testEmptyInput]' started.
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testEmptyInput]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testScorePhotos]' started.
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testScorePhotos]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testSelectBestByQuality]' started.
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testSelectBestByQuality]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testSelectBestByResolution]' started.
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testSelectBestByResolution]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testSelectForDeletion]' started.
+Test Case '-[PhotoCleanerTests.BestPhotoSelectorTests testSelectForDeletion]' passed (0.004 seconds).
+Test Suite 'BestPhotoSelectorTests' passed at 2026-01-09 13:53:27.627.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.007 (0.008) seconds
+Test Suite 'ClusteringTests' started at 2026-01-09 13:53:27.628.
+Test Case '-[PhotoCleanerTests.ClusteringTests testDBSCANClustering]' started.
+Test Case '-[PhotoCleanerTests.ClusteringTests testDBSCANClustering]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.ClusteringTests testHierarchicalClustering]' started.
+Test Case '-[PhotoCleanerTests.ClusteringTests testHierarchicalClustering]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.ClusteringTests testUnionFind]' started.
+Test Case '-[PhotoCleanerTests.ClusteringTests testUnionFind]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.ClusteringTests testUnionFindGroups]' started.
+Test Case '-[PhotoCleanerTests.ClusteringTests testUnionFindGroups]' passed (0.001 seconds).
+Test Suite 'ClusteringTests' passed at 2026-01-09 13:53:27.641.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.003 (0.014) seconds
+Test Suite 'DuplicateDetectionServiceTests' started at 2026-01-09 13:53:27.641.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsEmptyInput]' started.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsEmptyInput]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsMultipleDisconnectedChains]' started.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsMultipleDisconnectedChains]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsNoOverlap]' started.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsNoOverlap]' passed (0.103 seconds).
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsSingleGroup]' started.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsSingleGroup]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsWithComplexChain]' started.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsWithComplexChain]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsWithDuplicateElements]' started.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsWithDuplicateElements]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsWithMultipleOverlaps]' started.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsWithMultipleOverlaps]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsWithSingleOverlap]' started.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testMergeOverlappingGroupsWithSingleOverlap]' passed (0.003 seconds).
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testSetThreshold]' started.
+Test Case '-[PhotoCleanerTests.DuplicateDetectionServiceTests testSetThreshold]' passed (0.002 seconds).
+Test Suite 'DuplicateDetectionServiceTests' passed at 2026-01-09 13:53:27.765.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.119 (0.124) seconds
+Test Suite 'PerceptualHashTests' started at 2026-01-09 13:53:27.765.
+Test Case '-[PhotoCleanerTests.PerceptualHashTests testAreSimilar]' started.
+Test Case '-[PhotoCleanerTests.PerceptualHashTests testAreSimilar]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.PerceptualHashTests testHammingDistance]' started.
+Test Case '-[PhotoCleanerTests.PerceptualHashTests testHammingDistance]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.PerceptualHashTests testSimilarity]' started.
+Test Case '-[PhotoCleanerTests.PerceptualHashTests testSimilarity]' passed (0.002 seconds).
+Test Suite 'PerceptualHashTests' passed at 2026-01-09 13:53:27.773.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.005 (0.007) seconds
+Test Suite 'QualityAssessmentServiceTests' started at 2026-01-09 13:53:27.773.
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityAllGrades]' started.
+/Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift:130: error: -[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityAllGrades] : XCTAssertEqual failed: ("Optional(3)") is not equal to ("Optional(2)")
+/Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift:133: error: -[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityAllGrades] : XCTAssertEqual failed: ("nil") is not equal to ("Optional(1)")
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityAllGrades]' failed (0.385 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityBoundaryValues]' started.
+/Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift:180: error: -[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityBoundaryValues] : XCTAssertTrue failed
+/Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift:182: error: -[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityBoundaryValues] : XCTAssertTrue failed
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityBoundaryValues]' failed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityDistribution]' started.
+/Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift:221: error: -[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityDistribution] : XCTAssertFalse failed
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityDistribution]' failed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityEmptyInput]' started.
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityEmptyInput]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityMultipleUtility]' started.
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualityMultipleUtility]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualitySingleGrade]' started.
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testCategorizeByQualitySingleGrade]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosAllHighQuality]' started.
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosAllHighQuality]' passed (0.103 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosEmptyInput]' started.
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosEmptyInput]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosIncludesUtility]' started.
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosIncludesUtility]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosWithProgress]' started.
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosWithProgress]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosWithThreshold]' started.
+/Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift:41: error: -[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosWithThreshold] : XCTAssertEqual failed: ("1") is not equal to ("2")
+/Users/wolram/Developer/PhotoCleaner/PhotoCleanerTests/QualityAssessmentServiceTests.swift:42: error: -[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosWithThreshold] : XCTAssertTrue failed
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testFindLowQualityPhotosWithThreshold]' failed (0.005 seconds).
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testSetThreshold]' started.
+Test Case '-[PhotoCleanerTests.QualityAssessmentServiceTests testSetThreshold]' passed (0.002 seconds).
+Test Suite 'QualityAssessmentServiceTests' failed at 2026-01-09 13:53:28.296.
+	 Executed 12 tests, with 7 failures (0 unexpected) in 0.507 (0.523) seconds
+Test Suite 'QualityScoreTests' started at 2026-01-09 13:53:28.296.
+Test Case '-[PhotoCleanerTests.QualityScoreTests testBlurDetection]' started.
+Test Case '-[PhotoCleanerTests.QualityScoreTests testBlurDetection]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.QualityScoreTests testCompositeScore]' started.
+Test Case '-[PhotoCleanerTests.QualityScoreTests testCompositeScore]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.QualityScoreTests testExposureDetection]' started.
+Test Case '-[PhotoCleanerTests.QualityScoreTests testExposureDetection]' passed (0.002 seconds).
+Test Case '-[PhotoCleanerTests.QualityScoreTests testGradeAssignment]' started.
+Test Case '-[PhotoCleanerTests.QualityScoreTests testGradeAssignment]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.QualityScoreTests testIssuesDetection]' started.
+Test Case '-[PhotoCleanerTests.QualityScoreTests testIssuesDetection]' passed (0.001 seconds).
+Test Suite 'QualityScoreTests' passed at 2026-01-09 13:53:28.306.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.007 (0.009) seconds
+Test Suite 'SimilarityTests' started at 2026-01-09 13:53:28.306.
+Test Case '-[PhotoCleanerTests.SimilarityTests testCosineSimilarity]' started.
+Test Case '-[PhotoCleanerTests.SimilarityTests testCosineSimilarity]' passed (0.001 seconds).
+Test Case '-[PhotoCleanerTests.SimilarityTests testEmptyInput]' started.
+Test Case '-[PhotoCleanerTests.SimilarityTests testEmptyInput]' passed (0.103 seconds).
+Test Case '-[PhotoCleanerTests.SimilarityTests testHammingDistanceGrouping]' started.
+Test Case '-[PhotoCleanerTests.SimilarityTests testHammingDistanceGrouping]' passed (0.004 seconds).
+Test Suite 'SimilarityTests' passed at 2026-01-09 13:53:28.415.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.107 (0.109) seconds
+Test Suite 'PhotoCleanerTests.xctest' failed at 2026-01-09 13:53:28.415.
+	 Executed 60 tests, with 7 failures (0 unexpected) in 0.776 (0.948) seconds
+Test Suite 'All tests' failed at 2026-01-09 13:53:28.416.
+	 Executed 60 tests, with 7 failures (0 unexpected) in 0.776 (0.949) seconds
+2026-01-09 13:53:44.111 xcodebuild[14322:3477118] [MT] IDETestOperationsObserverDebug: 25.107 elapsed -- Testing started completed.
+2026-01-09 13:53:44.111 xcodebuild[14322:3477118] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-01-09 13:53:44.111 xcodebuild[14322:3477118] [MT] IDETestOperationsObserverDebug: 25.108 sec, +25.108 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/wolram/Library/Developer/Xcode/DerivedData/PhotoCleaner-bgwdkfwouueyrjhbajkfsfdweycp/Logs/Test/Test-PhotoCleaner-2026.01.09_13-53-04--0300.xcresult
+
+** TEST FAILED **
+
+Testing started

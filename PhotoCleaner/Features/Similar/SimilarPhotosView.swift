@@ -30,6 +30,9 @@ struct SimilarPhotosView: View {
             }
         }
         .navigationTitle("Similar Photos")
+        .onAppear {
+            print("SimilarPhotosView appeared. Found \(similarGroups.count) groups.")
+        }
         .toolbar {
             ToolbarItemGroup {
                 if !similarGroups.isEmpty {

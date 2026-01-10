@@ -25,6 +25,7 @@ struct TournamentRound: Identifiable, Equatable {
     let id = UUID()
     let roundNumber: Int
     var matches: [BattleMatch]
+    var byeId: String? // Track the player who gets a bye
 
     var isComplete: Bool {
         matches.allSatisfy { $0.isComplete }
@@ -115,6 +116,24 @@ final class BattleViewModel: ObservableObject {
     var eliminatedPhotos: [PhotoAssetEntity] {
         guard let champion = champion else { return [] }
         return photos.filter { $0.localIdentifier != champion.localIdentifier }
+    }
+
+    // MARK: - Recommendation
+
+    var recommendedPhotoId: String? {
+        guard let left = leftPhoto, let right = rightPhoto else { return nil }
+
+        let photos = [PhotoAsset(from: left), PhotoAsset(from: right)]
+        let selector = BestPhotoSelector()
+        return selector.selectBestId(from: photos)
+    }
+
+    var leftIsRecommended: Bool {
+        recommendedPhotoId == leftPhoto?.localIdentifier
+    }
+
+    var rightIsRecommended: Bool {
+        recommendedPhotoId == rightPhoto?.localIdentifier
     }
 
     // MARK: - Tournament Bracket Data
@@ -210,15 +229,17 @@ final class BattleViewModel: ObservableObject {
             }
 
             // If odd number, bye goes to next round
+            var roundByeId: String?
             if !remainingIds.isEmpty {
                 let byeId = remainingIds.removeFirst()
                 nextRoundIds.append(byeId)
-                print("  📍 Round \(roundNumber): \(roundMatches.count) matches + 1 bye")
+                roundByeId = byeId
+                print("  📍 Round \(roundNumber): \(roundMatches.count) matches + 1 bye (\(byeId))")
             } else {
                 print("  📍 Round \(roundNumber): \(roundMatches.count) matches")
             }
 
-            rounds.append(TournamentRound(roundNumber: roundNumber, matches: roundMatches))
+            rounds.append(TournamentRound(roundNumber: roundNumber, matches: roundMatches, byeId: roundByeId))
             remainingIds = nextRoundIds
             roundNumber += 1
         }
@@ -272,7 +293,12 @@ final class BattleViewModel: ObservableObject {
     }
 
     private func advanceToNextRound() {
-        let winners = rounds[currentRoundIndex].winners
+        var winners = rounds[currentRoundIndex].winners
+        
+        // Add the bye player to the winners pool if there was one
+        if let byeId = rounds[currentRoundIndex].byeId {
+            winners.append(byeId)
+        }
 
         // Check if tournament is complete
         if winners.count == 1 {

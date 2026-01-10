@@ -51,7 +51,7 @@ struct ScanView: View {
                 if viewModel.isLoadingAlbums {
                     HStack {
                         ProgressView()
-                            .scaleEffect(0.8)
+                            .controlSize(.small)
                         Text("Loading albums...")
                             .foregroundStyle(.secondary)
                     }
@@ -255,7 +255,7 @@ struct ScanView: View {
                         .fontWeight(.bold)
                 } else if current == phase {
                     ProgressView()
-                        .scaleEffect(0.8)
+                        .controlSize(.small)
                 }
             }
 

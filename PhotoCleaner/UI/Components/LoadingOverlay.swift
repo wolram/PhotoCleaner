@@ -16,7 +16,7 @@ struct LoadingOverlay: View {
                     CircularProgressView(progress: progress)
                 } else {
                     ProgressView()
-                        .scaleEffect(1.5)
+                        .controlSize(.large)
                 }
 
                 Text(message)

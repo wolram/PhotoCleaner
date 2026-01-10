@@ -34,6 +34,7 @@ struct BattleSelectionView: View {
         .sheet(isPresented: $showingBattle) {
             if let group = selectedGroup {
                 BattleView(group: group)
+                    .frame(minWidth: 1200, minHeight: 800)
             }
         }
     }

@@ -20,7 +20,7 @@ struct AsyncThumbnailImage: View {
                     .overlay {
                         if isLoading {
                             ProgressView()
-                                .scaleEffect(0.7)
+                                .controlSize(.small)
                         } else {
                             Image(systemName: "photo")
                                 .foregroundStyle(.tertiary)
@@ -66,7 +66,7 @@ struct CachedThumbnailImage: View {
                     .overlay {
                         if loader.isLoading {
                             ProgressView()
-                                .scaleEffect(0.7)
+                                .controlSize(.small)
                         } else {
                             Image(systemName: "photo")
                                 .foregroundStyle(.tertiary)

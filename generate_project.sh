@@ -44,9 +44,9 @@ if [ ! -f "$PROJECT_NAME/Info.plist" ]; then
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2026. All rights reserved.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Photo Cleaner precisa acessar sua biblioteca de fotos para encontrar e organizar duplicatas e fotos similares.</string>
+	<string>Photo Cleaner precisa acessar sua biblioteca de fotos para encontrar duplicatas e fotos similares.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Photo Cleaner pode precisar adicionar fotos à sua biblioteca após processamento.</string>
+	<string>Photo Cleaner precisa de permissão para gerenciar e apagar fotos da sua biblioteca.</string>
 </dict>
 </plist>
 PLIST_EOF
@@ -123,6 +123,8 @@ targets:
         CFBundleIdentifier: $BUNDLE_ID
         CFBundleDisplayName: Photo Cleaner
         LSMinimumSystemVersion: "$DEPLOYMENT_TARGET"
+        NSPhotoLibraryUsageDescription: "Photo Cleaner precisa acessar sua biblioteca de fotos para encontrar duplicatas e fotos similares."
+        NSPhotoLibraryAddUsageDescription: "Photo Cleaner precisa de permissão para gerenciar e apagar fotos da sua biblioteca."
 
 schemes:
   $PROJECT_NAME:

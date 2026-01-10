@@ -32,6 +32,9 @@ struct QualityReviewView: View {
             }
         }
         .navigationTitle("Quality Review")
+        .onAppear {
+            print("QualityReviewView appeared. Found \(photos.count) photos with scores.")
+        }
         .toolbar {
             ToolbarItemGroup {
                 Picker("Sort", selection: $sortOrder) {

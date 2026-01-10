@@ -22,7 +22,7 @@ struct MainSidebar: View {
                             Spacer()
                             if appState.isScanning {
                                 ProgressView()
-                                    .scaleEffect(0.7)
+                                    .controlSize(.small)
                             }
                         }
                     } icon: {

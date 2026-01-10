@@ -140,7 +140,7 @@ struct PhaseStepper: View {
                                 .fontWeight(.bold)
                         } else if currentPhase == phase.0 {
                             ProgressView()
-                                .scaleEffect(0.7)
+                                .controlSize(.small)
                                 .tint(.white)
                         } else {
                             Image(systemName: phase.2)

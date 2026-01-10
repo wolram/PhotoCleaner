@@ -213,7 +213,8 @@ struct BattleView: View {
             // Progress bar
             ProgressView(value: viewModel.overallProgress)
                 .progressViewStyle(.linear)
-                .frame(width: 100, height: 8)
+                .controlSize(.small)
+                .frame(width: 100)
                 .tint(.orange)
         }
     }
@@ -281,22 +282,12 @@ struct BattleView: View {
             .scaleEffect(isWinner ? 1.02 : 1.0)
             .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isWinner)
 
-            // Photo info
-            VStack(spacing: 4) {
-                Text(photoAsset.formattedDimensions)
-                    .font(.subheadline.bold())
-                    .foregroundStyle(.white)
-
-                HStack(spacing: 12) {
-                    Label(photoAsset.formattedFileSize, systemImage: "doc")
-                    if let score = photoAsset.qualityScore {
-                        Label("\(Int(score.composite * 100))%", systemImage: "star.fill")
-                            .foregroundStyle(.yellow)
-                    }
-                }
-                .font(.caption)
-                .foregroundStyle(.white.opacity(0.7))
-            }
+            // Photo info with detailed breakdown
+            BattlePhotoInfoCard(
+                photo: photo,
+                isRecommended: side == .left ? viewModel.leftIsRecommended : viewModel.rightIsRecommended
+            )
+            .frame(maxWidth: cardWidth)
         }
         .frame(maxWidth: .infinity)
     }
