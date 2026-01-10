@@ -19,6 +19,12 @@ struct DuplicatesView: View {
             }
         }
         .navigationTitle("Duplicates")
+        .onAppear {
+            // Auto-select first group if none selected
+            if selectedGroup == nil && !duplicateGroups.isEmpty {
+                selectedGroup = duplicateGroups.first
+            }
+        }
         .toolbar {
             ToolbarItemGroup {
                 if !duplicateGroups.isEmpty {

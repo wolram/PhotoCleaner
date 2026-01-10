@@ -32,6 +32,10 @@ struct SimilarPhotosView: View {
         .navigationTitle("Similar Photos")
         .onAppear {
             print("SimilarPhotosView appeared. Found \(similarGroups.count) groups.")
+            // Auto-select first group if none selected
+            if selectedGroup == nil && !similarGroups.isEmpty {
+                selectedGroup = similarGroups.first
+            }
         }
         .toolbar {
             ToolbarItemGroup {
