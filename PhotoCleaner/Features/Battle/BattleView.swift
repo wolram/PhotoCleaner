@@ -271,7 +271,7 @@ struct BattleView: View {
 
     private func battleCard(photo: PhotoAssetEntity, side: BattleViewModel.Side, isWinner: Bool, size: CGSize) -> some View {
         let photoAsset = PhotoAsset(from: photo)
-        let cardWidth = (size.width - 80) / 2 - 32
+        let cardWidth = max(0, (size.width - 80) / 2 - 32)
 
         return VStack(spacing: 12) {
             ZStack(alignment: .topTrailing) {
