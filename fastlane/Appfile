@@ -1,6 +1,64 @@
-# app_identifier("[[APP_IDENTIFIER]]") # The bundle identifier of your app
-# apple_id("[[APPLE_ID]]") # Your Apple Developer Portal username
+# Appfile - App-specific configuration for SnapSieve (PhotoCleaner)
+# Documentation: https://docs.fastlane.tools/advanced/Appfile/
 
+# ============================================================================
+# APP IDENTIFIER
+# ============================================================================
+# The bundle identifier of your app (must match your Xcode project)
+app_identifier("com.photocleaner.app")
 
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile
+# ============================================================================
+# APPLE DEVELOPER CREDENTIALS
+# ============================================================================
+# Your Apple Developer Portal email
+# Replace with your actual Apple ID email address
+apple_id("your-apple-id@example.com")
+
+# Your Apple Developer Team ID
+# Find this at: https://developer.apple.com/account -> Membership -> Team ID
+team_id("YOUR_TEAM_ID")
+
+# ============================================================================
+# APP STORE CONNECT
+# ============================================================================
+# App Store Connect Team ID (if different from Developer Portal Team ID)
+# This is typically used when you belong to multiple teams
+# itc_team_id("YOUR_ITC_TEAM_ID")
+
+# App Store Connect Team Name (alternative to team_id)
+# itc_team_name("Your Team Name")
+
+# ============================================================================
+# ENVIRONMENT-SPECIFIC OVERRIDES
+# ============================================================================
+# You can override values for specific lanes or environments
+
+# Example: Use different team for App Store submissions
+# for_lane :release do
+#   team_id("RELEASE_TEAM_ID")
+# end
+
+# Example: Use CI-specific Apple ID
+# for_platform :mac do
+#   apple_id(ENV["CI_APPLE_ID"] || "your-apple-id@example.com")
+# end
+
+# ============================================================================
+# NOTES
+# ============================================================================
+#
+# IMPORTANT: Never commit real credentials to version control!
+#
+# For CI/CD, use environment variables:
+#   - APPLE_ID: Your Apple ID email
+#   - TEAM_ID: Your Developer Team ID
+#   - APP_SPECIFIC_PASSWORD: For notarization (generate at appleid.apple.com)
+#   - MATCH_PASSWORD: For match certificate encryption
+#   - FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: Alternative for App Specific Password
+#
+# To generate an App-Specific Password:
+#   1. Go to https://appleid.apple.com
+#   2. Sign in and go to Security
+#   3. Under "App-Specific Passwords", click "Generate Password"
+#   4. Store securely and use as APP_SPECIFIC_PASSWORD environment variable
+#

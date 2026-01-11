@@ -1,0 +1,99 @@
+# Matchfile - Code Signing configuration using fastlane match
+# Documentation: https://docs.fastlane.tools/actions/match/
+#
+# match is a tool that syncs certificates and provisioning profiles across
+# your team using a private Git repository or cloud storage.
+
+# ============================================================================
+# STORAGE CONFIGURATION
+# ============================================================================
+
+# Git repository URL for storing certificates and profiles
+# This should be a PRIVATE repository that only your team has access to
+# Example: "git@github.com:yourcompany/certificates.git"
+git_url("git@github.com:YOUR_ORG/certificates.git")
+
+# Alternative: Use cloud storage instead of Git
+# storage_mode("google_cloud")  # or "s3", "azure"
+# google_cloud_bucket_name("your-bucket-name")
+
+# ============================================================================
+# APP CONFIGURATION
+# ============================================================================
+
+# App identifier (should match Appfile)
+app_identifier("com.photocleaner.app")
+
+# Your Apple Developer username (should match Appfile)
+username("your-apple-id@example.com")
+
+# Your Apple Developer Team ID (should match Appfile)
+team_id("YOUR_TEAM_ID")
+
+# ============================================================================
+# CERTIFICATE TYPE
+# ============================================================================
+
+# Type of certificates to sync
+# Options: "development", "appstore", "adhoc", "enterprise", "developer_id"
+# For macOS App Store: use "appstore" and "developer_id"
+type("appstore")
+
+# Platform (important for macOS!)
+platform("macos")
+
+# ============================================================================
+# ADDITIONAL OPTIONS
+# ============================================================================
+
+# Clone the repo using shallow clone (faster)
+shallow_clone(true)
+
+# Don't generate Apple Push Notification certificates
+skip_docs(true)
+
+# Force match to overwrite existing profiles
+# force(true)
+
+# Read-only mode - use this in CI to prevent accidental modifications
+# readonly(true)
+
+# ============================================================================
+# KEYCHAIN CONFIGURATION (for CI)
+# ============================================================================
+
+# Keychain name to install certificates to
+# keychain_name("login.keychain")
+
+# Keychain password (for CI, use environment variable)
+# keychain_password(ENV["KEYCHAIN_PASSWORD"])
+
+# ============================================================================
+# NOTES
+# ============================================================================
+#
+# SETUP INSTRUCTIONS:
+#
+# 1. Create a private Git repository for certificates:
+#    - Create new private repo (e.g., github.com/yourcompany/certificates)
+#    - Ensure your team has access
+#
+# 2. Initialize match:
+#    fastlane match init
+#
+# 3. Generate certificates and profiles:
+#    fastlane match development  # For development
+#    fastlane match appstore     # For App Store distribution
+#    fastlane match developer_id # For Developer ID (direct distribution)
+#
+# 4. In CI/CD, use readonly mode:
+#    fastlane match appstore --readonly
+#
+# ENVIRONMENT VARIABLES FOR CI:
+#   - MATCH_PASSWORD: Encryption password for the certificates repo
+#   - MATCH_GIT_BASIC_AUTHORIZATION: Base64 encoded "username:token" for Git auth
+#   - MATCH_KEYCHAIN_NAME: Name of the keychain to use
+#   - MATCH_KEYCHAIN_PASSWORD: Password for the keychain
+#
+# For more info: https://docs.fastlane.tools/actions/match/
+#

@@ -1,23 +1,509 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
+# This file contains the fastlane.tools configuration for SnapSieve (PhotoCleaner)
+# Documentation: https://docs.fastlane.tools
 #
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
+# For a list of all available actions: https://docs.fastlane.tools/actions
+# For a list of all available plugins: https://docs.fastlane.tools/plugins/available-plugins
 
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+# Prevent timeout issues with xcodebuild
+ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "180"
 
-default_platform(:ios)
+# ============================================================================
+# GLOBAL CONFIGURATION
+# ============================================================================
 
-platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+default_platform(:mac)
+
+# Project constants
+PROJECT_NAME = "PhotoCleaner"
+SCHEME = "PhotoCleaner"
+XCODEPROJ = "#{PROJECT_NAME}.xcodeproj"
+APP_IDENTIFIER = "com.photocleaner.app"
+
+# ============================================================================
+# HELPER METHODS
+# ============================================================================
+
+# Ensures the Xcode project exists by running xcodegen if needed
+def ensure_project_exists
+  unless File.exist?("../#{XCODEPROJ}")
+    UI.message("Xcode project not found. Running xcodegen to generate it...")
+
+    # Check if xcodegen is installed
+    unless system("which xcodegen > /dev/null 2>&1")
+      UI.error("xcodegen is not installed!")
+      UI.message("Install it with: brew install xcodegen")
+      UI.user_error!("Please install xcodegen and try again.")
+    end
+
+    # Run the generate_project.sh script (without opening Xcode)
+    Dir.chdir("..") do
+      # Create project.yml and run xcodegen directly
+      sh("./generate_project.sh 2>&1 | head -20 || true")
+    end
+
+    # Verify project was created
+    unless File.exist?("../#{XCODEPROJ}")
+      UI.user_error!("Failed to generate Xcode project. Please run ./generate_project.sh manually.")
+    end
+
+    UI.success("Xcode project generated successfully!")
+  else
+    UI.message("Xcode project found at #{XCODEPROJ}")
   end
+end
+
+# Get the current version from Info.plist
+def get_version_number_from_plist
+  plist_path = "../#{PROJECT_NAME}/Info.plist"
+  if File.exist?(plist_path)
+    `/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "#{plist_path}"`.strip
+  else
+    "1.0"
+  end
+end
+
+# Get the current build number from Info.plist
+def get_build_number_from_plist
+  plist_path = "../#{PROJECT_NAME}/Info.plist"
+  if File.exist?(plist_path)
+    `/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "#{plist_path}"`.strip
+  else
+    "1"
+  end
+end
+
+# ============================================================================
+# macOS PLATFORM
+# ============================================================================
+
+platform :mac do
+
+  # ==========================================================================
+  # BEFORE ALL - Setup
+  # ==========================================================================
+
+  before_all do |lane|
+    UI.message("=" * 60)
+    UI.message("Starting lane: #{lane}")
+    UI.message("=" * 60)
+
+    # Ensure we have the Xcode project
+    ensure_project_exists
+  end
+
+  # ==========================================================================
+  # BUILD LANE
+  # ==========================================================================
+
+  desc "Build the app in Debug configuration"
+  desc "Usage: fastlane mac build"
+  lane :build do
+    UI.header("Building #{PROJECT_NAME} for macOS (Debug)")
+
+    begin
+      # Clean and build the project
+      xcodebuild(
+        project: XCODEPROJ,
+        scheme: SCHEME,
+        configuration: "Debug",
+        clean: true,
+        build: true,
+        destination: "platform=macOS",
+        xcargs: "-quiet"
+      )
+
+      UI.success("Build completed successfully!")
+
+    rescue => e
+      UI.error("Build failed: #{e.message}")
+      UI.user_error!("Build failed. Check the error messages above.")
+    end
+  end
+
+  desc "Build the app in Release configuration"
+  desc "Usage: fastlane mac build_release"
+  lane :build_release do
+    UI.header("Building #{PROJECT_NAME} for macOS (Release)")
+
+    begin
+      xcodebuild(
+        project: XCODEPROJ,
+        scheme: SCHEME,
+        configuration: "Release",
+        clean: true,
+        build: true,
+        destination: "platform=macOS",
+        xcargs: "-quiet"
+      )
+
+      UI.success("Release build completed successfully!")
+
+    rescue => e
+      UI.error("Build failed: #{e.message}")
+      UI.user_error!("Release build failed. Check the error messages above.")
+    end
+  end
+
+  # ==========================================================================
+  # TEST LANE
+  # ==========================================================================
+
+  desc "Run unit tests for the app"
+  desc "Usage: fastlane mac test"
+  desc "Options:"
+  desc "  device: Specific device to test on (default: platform=macOS)"
+  lane :test do |options|
+    UI.header("Running tests for #{PROJECT_NAME}")
+
+    begin
+      # Run tests with scan (fastlane's test runner)
+      scan(
+        project: XCODEPROJ,
+        scheme: SCHEME,
+        configuration: "Debug",
+        destination: options[:device] || "platform=macOS",
+        clean: true,
+        code_coverage: true,
+        output_directory: "./fastlane/test_output",
+        output_types: "html,junit",
+        result_bundle: true,
+        fail_build: true
+      )
+
+      UI.success("All tests passed!")
+      UI.message("Test reports available at: ./fastlane/test_output/")
+
+    rescue => e
+      UI.error("Tests failed: #{e.message}")
+      UI.message("Check test reports at: ./fastlane/test_output/")
+      UI.user_error!("Tests failed. Review the test output for details.")
+    end
+  end
+
+  desc "Run tests without failing on error (useful for CI reporting)"
+  lane :test_report do
+    UI.header("Running tests with reporting for #{PROJECT_NAME}")
+
+    begin
+      scan(
+        project: XCODEPROJ,
+        scheme: SCHEME,
+        configuration: "Debug",
+        destination: "platform=macOS",
+        clean: true,
+        code_coverage: true,
+        output_directory: "./fastlane/test_output",
+        output_types: "html,junit",
+        result_bundle: true,
+        fail_build: false  # Don't fail, just report
+      )
+    rescue => e
+      UI.important("Tests completed with failures. See reports for details.")
+    end
+
+    UI.message("Test reports generated at: ./fastlane/test_output/")
+  end
+
+  # ==========================================================================
+  # RELEASE LANE (Archive + Notarize + Upload)
+  # ==========================================================================
+
+  desc "Build, archive, notarize, and prepare for App Store submission"
+  desc "Usage: fastlane mac release"
+  desc "Options:"
+  desc "  skip_notarize: Skip notarization step (default: false)"
+  desc "  skip_upload: Skip App Store upload (default: false)"
+  lane :release do |options|
+    UI.header("Preparing #{PROJECT_NAME} for Release")
+
+    version = get_version_number_from_plist
+    build_num = get_build_number_from_plist
+    UI.message("Version: #{version} (#{build_num})")
+
+    # -------------------------------------------------------------------------
+    # Step 1: Build Archive
+    # -------------------------------------------------------------------------
+    UI.message("Step 1/4: Creating archive...")
+
+    archive_path = "./build/#{PROJECT_NAME}.xcarchive"
+
+    begin
+      gym(
+        project: XCODEPROJ,
+        scheme: SCHEME,
+        configuration: "Release",
+        clean: true,
+        output_directory: "./build",
+        output_name: PROJECT_NAME,
+        archive_path: archive_path,
+        destination: "platform=macOS",
+        export_method: "app-store",
+        export_options: {
+          method: "app-store",
+          signingStyle: "automatic",
+          uploadBitcode: false,
+          uploadSymbols: true
+        }
+      )
+
+      UI.success("Archive created successfully!")
+
+    rescue => e
+      UI.error("Archive failed: #{e.message}")
+      UI.user_error!("Failed to create archive. Ensure code signing is configured correctly.")
+    end
+
+    # -------------------------------------------------------------------------
+    # Step 2: Export App
+    # -------------------------------------------------------------------------
+    UI.message("Step 2/4: Exporting app...")
+
+    app_path = "./build/#{PROJECT_NAME}.app"
+    pkg_path = "./build/#{PROJECT_NAME}.pkg"
+
+    UI.success("App exported to: #{app_path}")
+
+    # -------------------------------------------------------------------------
+    # Step 3: Notarize (unless skipped)
+    # -------------------------------------------------------------------------
+    unless options[:skip_notarize]
+      UI.message("Step 3/4: Notarizing app with Apple...")
+
+      # NOTE: Notarization requires the following environment variables or Appfile settings:
+      # - APPLE_ID or apple_id in Appfile
+      # - APP_SPECIFIC_PASSWORD (generate at appleid.apple.com)
+      # - TEAM_ID or team_id in Appfile
+
+      begin
+        # Check if credentials are configured
+        apple_id = ENV["APPLE_ID"] || CredentialsManager::AppfileConfig.try_fetch_value(:apple_id)
+        team_id = ENV["TEAM_ID"] || CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
+
+        if apple_id.nil? || apple_id.empty? || apple_id.include?("your")
+          UI.important("Skipping notarization: Apple ID not configured")
+          UI.message("To enable notarization:")
+          UI.message("  1. Set apple_id in fastlane/Appfile")
+          UI.message("  2. Set APP_SPECIFIC_PASSWORD environment variable")
+          UI.message("  3. Set team_id in fastlane/Appfile")
+        else
+          notarize(
+            package: app_path,
+            bundle_id: APP_IDENTIFIER,
+            username: apple_id,
+            asc_provider: team_id,
+            print_log: true,
+            verbose: true
+          )
+
+          UI.success("App notarized successfully!")
+        end
+
+      rescue => e
+        UI.error("Notarization failed: #{e.message}")
+        UI.important("Continuing without notarization...")
+      end
+    else
+      UI.message("Step 3/4: Skipping notarization (skip_notarize: true)")
+    end
+
+    # -------------------------------------------------------------------------
+    # Step 4: Upload to App Store Connect (unless skipped)
+    # -------------------------------------------------------------------------
+    unless options[:skip_upload]
+      UI.message("Step 4/4: Uploading to App Store Connect...")
+
+      begin
+        # Check if credentials are configured
+        apple_id = ENV["APPLE_ID"] || CredentialsManager::AppfileConfig.try_fetch_value(:apple_id)
+
+        if apple_id.nil? || apple_id.empty? || apple_id.include?("your")
+          UI.important("Skipping upload: Apple ID not configured")
+          UI.message("To enable App Store upload:")
+          UI.message("  1. Configure fastlane/Appfile with your credentials")
+          UI.message("  2. Run: fastlane mac release")
+        else
+          deliver(
+            pkg: pkg_path,
+            skip_screenshots: true,
+            skip_metadata: true,
+            skip_app_version_update: false,
+            force: true,
+            run_precheck_before_submit: false,
+            submit_for_review: false
+          )
+
+          UI.success("Uploaded to App Store Connect!")
+        end
+
+      rescue => e
+        UI.error("Upload failed: #{e.message}")
+        UI.important("Archive is available at: #{archive_path}")
+        UI.message("You can manually upload using Transporter or Xcode Organizer.")
+      end
+    else
+      UI.message("Step 4/4: Skipping upload (skip_upload: true)")
+    end
+
+    # -------------------------------------------------------------------------
+    # Summary
+    # -------------------------------------------------------------------------
+    UI.message("")
+    UI.header("Release Summary")
+    UI.success("Version: #{version} (#{build_num})")
+    UI.success("Archive: #{archive_path}")
+    UI.success("App: #{app_path}")
+    UI.message("")
+    UI.message("Next steps:")
+    UI.message("  - If notarization was skipped, run: xcrun notarytool submit #{app_path}")
+    UI.message("  - If upload was skipped, use Transporter or Xcode Organizer")
+    UI.message("  - Submit for review in App Store Connect")
+  end
+
+  # ==========================================================================
+  # UTILITY LANES
+  # ==========================================================================
+
+  desc "Increment the build number"
+  desc "Usage: fastlane mac bump_build"
+  lane :bump_build do
+    plist_path = "../#{PROJECT_NAME}/Info.plist"
+
+    current_build = get_build_number_from_plist.to_i
+    new_build = current_build + 1
+
+    sh("/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion #{new_build}\" \"#{plist_path}\"")
+
+    UI.success("Build number incremented: #{current_build} -> #{new_build}")
+  end
+
+  desc "Set the version number"
+  desc "Usage: fastlane mac set_version version:1.2.0"
+  lane :set_version do |options|
+    UI.user_error!("Please provide version parameter: fastlane mac set_version version:1.2.0") unless options[:version]
+
+    plist_path = "../#{PROJECT_NAME}/Info.plist"
+    new_version = options[:version]
+
+    sh("/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString #{new_version}\" \"#{plist_path}\"")
+
+    UI.success("Version set to: #{new_version}")
+  end
+
+  desc "Clean build artifacts and derived data"
+  desc "Usage: fastlane mac clean"
+  lane :clean do
+    UI.header("Cleaning build artifacts...")
+
+    # Clean Xcode build
+    if File.exist?("../#{XCODEPROJ}")
+      xcodebuild(
+        project: XCODEPROJ,
+        scheme: SCHEME,
+        clean: true,
+        build: false
+      )
+    end
+
+    # Remove build directory
+    FileUtils.rm_rf("../build") if File.exist?("../build")
+
+    # Remove test output
+    FileUtils.rm_rf("./test_output") if File.exist?("./test_output")
+
+    # Remove derived data for this project
+    derived_data_path = File.expand_path("~/Library/Developer/Xcode/DerivedData")
+    if File.exist?(derived_data_path)
+      Dir.glob("#{derived_data_path}/#{PROJECT_NAME}-*").each do |dir|
+        UI.message("Removing: #{dir}")
+        FileUtils.rm_rf(dir)
+      end
+    end
+
+    UI.success("Clean completed!")
+  end
+
+  desc "Generate Xcode project using xcodegen"
+  desc "Usage: fastlane mac generate"
+  lane :generate do
+    UI.header("Generating Xcode project...")
+
+    # Remove existing project to force regeneration
+    FileUtils.rm_rf("../#{XCODEPROJ}") if File.exist?("../#{XCODEPROJ}")
+
+    # Run xcodegen
+    ensure_project_exists
+
+    UI.success("Project generated!")
+  end
+
+  desc "Show current version and build number"
+  desc "Usage: fastlane mac version"
+  lane :version do
+    version = get_version_number_from_plist
+    build = get_build_number_from_plist
+
+    UI.message("")
+    UI.header("#{PROJECT_NAME} Version Info")
+    UI.message("Version: #{version}")
+    UI.message("Build:   #{build}")
+    UI.message("")
+  end
+
+  # ==========================================================================
+  # CI/CD LANES
+  # ==========================================================================
+
+  desc "Full CI pipeline: build and test"
+  desc "Usage: fastlane mac ci"
+  lane :ci do
+    UI.header("Running CI Pipeline")
+
+    # Build first
+    build
+
+    # Then run tests
+    test
+
+    UI.success("CI Pipeline completed successfully!")
+  end
+
+  desc "Full CD pipeline: build, test, and release"
+  desc "Usage: fastlane mac cd"
+  desc "Options: Same as release lane"
+  lane :cd do |options|
+    UI.header("Running CD Pipeline")
+
+    # Bump build number for release
+    bump_build
+
+    # Run full CI first
+    ci
+
+    # Then release
+    release(options)
+
+    UI.success("CD Pipeline completed successfully!")
+  end
+
+  # ==========================================================================
+  # AFTER ALL - Cleanup
+  # ==========================================================================
+
+  after_all do |lane|
+    UI.message("=" * 60)
+    UI.success("Lane #{lane} completed successfully!")
+    UI.message("=" * 60)
+  end
+
+  # ==========================================================================
+  # ERROR HANDLING
+  # ==========================================================================
+
+  error do |lane, exception|
+    UI.error("=" * 60)
+    UI.error("Lane #{lane} failed!")
+    UI.error("Error: #{exception.message}")
+    UI.error("=" * 60)
+  end
+
 end
