@@ -1,0 +1,104 @@
+/*
+  Localizable.strings
+  SnapSieve
+
+  English (Base) localization strings.
+  Copyright 2026. All rights reserved.
+*/
+
+// MARK: - App Info
+"app.name" = "SnapSieve";
+"app.tagline" = "Clean up your photo library with AI";
+
+// MARK: - Permissions
+"permission.photos.usage" = "SnapSieve needs access to your photo library to find duplicates and similar photos. All processing happens locally on your device.";
+"permission.photos.add" = "SnapSieve needs permission to manage your photo library. Photos are only deleted with your explicit confirmation.";
+
+// MARK: - Navigation
+"nav.library" = "Library";
+"nav.scan" = "Scan";
+"nav.duplicates" = "Duplicates";
+"nav.similar" = "Similar Photos";
+"nav.quality" = "Quality Review";
+"nav.battle" = "Battle Mode";
+"nav.categories" = "Categories";
+
+// MARK: - Scanning
+"scan.start" = "Start Scan";
+"scan.stop" = "Stop Scan";
+"scan.progress" = "Scanning...";
+"scan.phase.idle" = "Ready to scan";
+"scan.phase.loading" = "Loading photos...";
+"scan.phase.analyzing" = "Analyzing photos...";
+"scan.phase.grouping" = "Grouping similar photos...";
+"scan.phase.complete" = "Scan complete";
+"scan.photos.count" = "%d photos scanned";
+"scan.duplicates.found" = "%d duplicates found";
+"scan.similar.found" = "%d similar groups found";
+"scan.lowquality.found" = "%d low quality photos found";
+
+// MARK: - Duplicates
+"duplicates.title" = "Duplicates";
+"duplicates.empty" = "No duplicates found";
+"duplicates.group.count" = "%d duplicate groups";
+"duplicates.select.best" = "Select best photo";
+"duplicates.delete.others" = "Delete Others";
+"duplicates.keep.all" = "Keep All";
+
+// MARK: - Similar Photos
+"similar.title" = "Similar Photos";
+"similar.empty" = "No similar photos found";
+"similar.group.count" = "%d similar groups";
+
+// MARK: - Quality
+"quality.title" = "Quality Review";
+"quality.grade.a" = "Excellent";
+"quality.grade.b" = "Good";
+"quality.grade.c" = "Average";
+"quality.grade.d" = "Below Average";
+"quality.grade.f" = "Poor";
+"quality.grade.u" = "Utility";
+"quality.low" = "Low Quality Photos";
+"quality.empty" = "No low quality photos found";
+
+// MARK: - Battle Mode
+"battle.title" = "Battle Mode";
+"battle.choose" = "Choose the better photo";
+"battle.skip" = "Skip";
+"battle.complete" = "All battles complete!";
+
+// MARK: - Categories
+"categories.title" = "Categories";
+"categories.screenshots" = "Screenshots";
+"categories.panoramas" = "Panoramas";
+"categories.portraits" = "Portraits";
+"categories.landscapes" = "Landscapes";
+"categories.other" = "Other";
+
+// MARK: - Actions
+"action.delete" = "Delete";
+"action.keep" = "Keep";
+"action.cancel" = "Cancel";
+"action.confirm" = "Confirm";
+"action.select.all" = "Select All";
+"action.deselect.all" = "Deselect All";
+"action.delete.selected" = "Delete Selected";
+
+// MARK: - Alerts
+"alert.delete.title" = "Delete Photos";
+"alert.delete.message" = "Are you sure you want to delete %d photos? This action cannot be undone.";
+"alert.delete.confirm" = "Delete";
+"alert.delete.cancel" = "Cancel";
+"alert.error.title" = "Error";
+"alert.error.ok" = "OK";
+
+// MARK: - Storage
+"storage.space.recoverable" = "Space recoverable: %@";
+"storage.bytes" = "bytes";
+"storage.kb" = "KB";
+"storage.mb" = "MB";
+"storage.gb" = "GB";
+
+// MARK: - Privacy
+"privacy.local.processing" = "All processing happens locally on your device";
+"privacy.no.data.collection" = "No data is collected or transmitted";

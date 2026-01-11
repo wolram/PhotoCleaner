@@ -140,13 +140,56 @@ struct CategoriesView: View {
     }
 
     private var emptyView: some View {
-        EmptyStateView(
-            icon: "folder",
-            title: "No Categories Yet",
-            message: "Run a scan with AI categorization enabled to organize your photos automatically.",
-            actionTitle: "Start Scan"
-        ) {
-            appState.selectedDestination = .scan
+        VStack(spacing: 20) {
+            Image(systemName: "sparkles")
+                .font(.system(size: 56))
+                .foregroundStyle(.blue.gradient)
+
+            VStack(spacing: 8) {
+                Text("AI Categories")
+                    .font(.title)
+                    .fontWeight(.bold)
+
+                HStack(spacing: 6) {
+                    Text("Coming Soon")
+                        .font(.headline)
+                        .foregroundStyle(.blue)
+
+                    Text("v1.1")
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .background(.blue.opacity(0.15))
+                        .foregroundStyle(.blue)
+                        .clipShape(Capsule())
+                }
+            }
+
+            Text("Automatic photo categorization powered by MobileCLIP will intelligently organize your photos into categories like Nature, Portraits, Food, Travel, and more.")
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: 400)
+
+            VStack(alignment: .leading, spacing: 12) {
+                featureRow(icon: "brain", text: "On-device AI processing")
+                featureRow(icon: "lock.shield", text: "100% private - no cloud upload")
+                featureRow(icon: "bolt", text: "Fast categorization with Apple Neural Engine")
+            }
+            .padding(.top, 8)
+        }
+        .padding(40)
+    }
+
+    private func featureRow(icon: String, text: String) -> some View {
+        HStack(spacing: 12) {
+            Image(systemName: icon)
+                .font(.body)
+                .foregroundStyle(.blue)
+                .frame(width: 24)
+
+            Text(text)
+                .foregroundStyle(.secondary)
         }
     }
 

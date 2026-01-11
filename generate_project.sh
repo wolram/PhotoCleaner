@@ -24,7 +24,7 @@ if [ ! -f "$PROJECT_NAME/Info.plist" ]; then
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Photo Cleaner</string>
+	<string>SnapSieve</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -44,9 +44,9 @@ if [ ! -f "$PROJECT_NAME/Info.plist" ]; then
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2026. All rights reserved.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Photo Cleaner precisa acessar sua biblioteca de fotos para encontrar duplicatas e fotos similares.</string>
+	<string>SnapSieve needs access to your photo library to find duplicates and similar photos. All processing happens locally on your device.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Photo Cleaner precisa de permissão para gerenciar e apagar fotos da sua biblioteca.</string>
+	<string>SnapSieve needs permission to manage your photo library. Photos are only deleted with your explicit confirmation.</string>
 </dict>
 </plist>
 PLIST_EOF
@@ -121,10 +121,10 @@ targets:
       path: $PROJECT_NAME/Info.plist
       properties:
         CFBundleIdentifier: $BUNDLE_ID
-        CFBundleDisplayName: Photo Cleaner
+        CFBundleDisplayName: SnapSieve
         LSMinimumSystemVersion: "$DEPLOYMENT_TARGET"
-        NSPhotoLibraryUsageDescription: "Photo Cleaner precisa acessar sua biblioteca de fotos para encontrar duplicatas e fotos similares."
-        NSPhotoLibraryAddUsageDescription: "Photo Cleaner precisa de permissão para gerenciar e apagar fotos da sua biblioteca."
+        NSPhotoLibraryUsageDescription: "SnapSieve needs access to your photo library to find duplicates and similar photos. All processing happens locally on your device."
+        NSPhotoLibraryAddUsageDescription: "SnapSieve needs permission to manage your photo library. Photos are only deleted with your explicit confirmation."
 
 schemes:
   $PROJECT_NAME:
