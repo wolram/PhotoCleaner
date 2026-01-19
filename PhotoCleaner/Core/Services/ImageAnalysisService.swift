@@ -1,5 +1,4 @@
 import Vision
-import AppKit
 import CoreImage
 
 actor ImageAnalysisService {
@@ -220,3 +219,4 @@ actor ImageAnalysisService {
         }
     }
 }
+

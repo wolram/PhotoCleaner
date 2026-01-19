@@ -7,12 +7,16 @@ let package = Package(
         .macOS(.v14)
     ],
     products: [
-        .executable(name: "PhotoCleaner", targets: ["PhotoCleaner"])
+        .library(name: "PhotoCleaner", targets: ["PhotoCleaner"])
     ],
     targets: [
-        .executableTarget(
+        .target(
             name: "PhotoCleaner",
-            path: "PhotoCleaner"
+            path: "PhotoCleaner",
+            linkerSettings: [
+                .linkedFramework("AppKit"),
+                .linkedFramework("Photos")
+            ]
         ),
         .testTarget(
             name: "PhotoCleanerTests",

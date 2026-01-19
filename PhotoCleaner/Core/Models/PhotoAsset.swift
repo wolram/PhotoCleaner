@@ -1,6 +1,8 @@
 import Foundation
 import Vision
+#if canImport(AppKit)
 import AppKit
+#endif
 
 struct PhotoAsset: Identifiable, Hashable {
     let id: String // PHAsset.localIdentifier
@@ -10,8 +12,10 @@ struct PhotoAsset: Identifiable, Hashable {
     let fileSize: Int64
     let fileName: String?
 
+    #if canImport(AppKit)
     var thumbnail: NSImage?
     var fullImage: NSImage?
+    #endif
 
     // Analysis results
     var featurePrint: VNFeaturePrintObservation?
