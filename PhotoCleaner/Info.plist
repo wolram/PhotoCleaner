@@ -5,11 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Photo Cleaner</string>
+	<string>Snap Sieve</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.photocleaner.app</string>
+	<string>com.marlowsousa.snapsieve</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -20,11 +20,5 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSMinimumSystemVersion</key>
-	<string>14.0</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Photo Cleaner precisa de permissão para gerenciar e apagar fotos da sua biblioteca.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Photo Cleaner precisa acessar sua biblioteca de fotos para encontrar duplicatas e fotos similares.</string>
 </dict>
 </plist>

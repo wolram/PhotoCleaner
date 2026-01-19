@@ -16,7 +16,6 @@ struct ScanView: View {
                 startView
             }
         }
-        .navigationTitle("Scan Library")
         .onAppear {
             viewModel.appState = appState
             viewModel.modelContext = modelContext

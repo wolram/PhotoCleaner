@@ -2,15 +2,15 @@ import Foundation
 import os.log
 
 final class MemoryManager {
-    static let shared = MemoryManager()
+    nonisolated(unsafe) static let shared = MemoryManager()
 
     private let logger = Logger(subsystem: "com.photocleaner", category: "Memory")
     private let warningThreshold: UInt64 = 500_000_000  // 500 MB
     private let criticalThreshold: UInt64 = 200_000_000 // 200 MB
 
-    private var memoryPressureSource: DispatchSourceMemoryPressure?
-    private var onMemoryWarning: (() -> Void)?
-    private var onCriticalMemory: (() -> Void)?
+    nonisolated(unsafe) private var memoryPressureSource: DispatchSourceMemoryPressure?
+    nonisolated(unsafe) private var onMemoryWarning: (() -> Void)?
+    nonisolated(unsafe) private var onCriticalMemory: (() -> Void)?
 
     private init() {
         setupMemoryPressureMonitoring()

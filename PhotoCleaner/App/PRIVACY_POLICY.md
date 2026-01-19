@@ -1,4 +1,4 @@
-# PhotoCleaner - Privacy Policy / Política de Privacidade
+# Snap Sieve - Privacy Policy / Política de Privacidade
 
 **Last Updated / Última Atualização:** January 5, 2025
 
@@ -6,15 +6,15 @@
 
 ## 🇧🇷 PORTUGUÊS
 
-### Política de Privacidade do PhotoCleaner
+### Política de Privacidade do Snap Sieve
 
 #### 1. Informações Gerais
 
-O PhotoCleaner é um aplicativo desenvolvido para ajudar usuários a organizar e limpar suas bibliotecas de fotos no macOS. Levamos sua privacidade muito a sério.
+O Snap Sieve é um aplicativo desenvolvido para ajudar usuários a organizar e limpar suas bibliotecas de fotos no macOS. Levamos sua privacidade muito a sério.
 
 #### 2. Coleta de Dados
 
-**O PhotoCleaner NÃO coleta, armazena ou transmite nenhum dado pessoal ou foto para servidores externos.**
+**O Snap Sieve NÃO coleta, armazena ou transmite nenhum dado pessoal ou foto para servidores externos.**
 
 Todo o processamento é realizado localmente no seu Mac:
 - Análise de fotos é feita localmente usando Vision Framework da Apple
@@ -25,7 +25,7 @@ Todo o processamento é realizado localmente no seu Mac:
 
 #### 3. Acesso à Biblioteca de Fotos
 
-O PhotoCleaner solicita acesso à sua biblioteca de fotos do macOS apenas para:
+O Snap Sieve solicita acesso à sua biblioteca de fotos do macOS apenas para:
 - Ler metadados das fotos (data, tamanho, dimensões)
 - Gerar thumbnails para visualização
 - Analisar características visuais para encontrar duplicatas
@@ -38,7 +38,7 @@ O PhotoCleaner solicita acesso à sua biblioteca de fotos do macOS apenas para:
 
 #### 4. Dados Armazenados Localmente
 
-O PhotoCleaner armazena localmente apenas:
+O Snap Sieve armazena localmente apenas:
 - Resultados de análise (identificadores de fotos, não as fotos em si)
 - Preferências do usuário
 - Cache de thumbnails
@@ -68,7 +68,7 @@ Todos esses dados ficam no seu Mac e podem ser deletados a qualquer momento desi
 
 #### 8. Menores de Idade
 
-O PhotoCleaner é classificado como 4+ e pode ser usado por todas as idades. Não coletamos informações de menores de idade.
+O Snap Sieve é classificado como 4+ e pode ser usado por todas as idades. Não coletamos informações de menores de idade.
 
 #### 9. Alterações na Política
 
@@ -83,15 +83,15 @@ Para questões sobre privacidade, entre em contato:
 
 ## 🇺🇸 ENGLISH
 
-### PhotoCleaner Privacy Policy
+### Snap Sieve Privacy Policy
 
 #### 1. General Information
 
-PhotoCleaner is an application developed to help users organize and clean their photo libraries on macOS. We take your privacy very seriously.
+Snap Sieve is an application developed to help users organize and clean their photo libraries on macOS. We take your privacy very seriously.
 
 #### 2. Data Collection
 
-**PhotoCleaner DOES NOT collect, store, or transmit any personal data or photos to external servers.**
+**Snap Sieve DOES NOT collect, store, or transmit any personal data or photos to external servers.**
 
 All processing is performed locally on your Mac:
 - Photo analysis is done locally using Apple's Vision Framework
@@ -102,7 +102,7 @@ All processing is performed locally on your Mac:
 
 #### 3. Photo Library Access
 
-PhotoCleaner requests access to your macOS photo library only to:
+Snap Sieve requests access to your macOS photo library only to:
 - Read photo metadata (date, size, dimensions)
 - Generate thumbnails for viewing
 - Analyze visual features to find duplicates
@@ -115,7 +115,7 @@ PhotoCleaner requests access to your macOS photo library only to:
 
 #### 4. Locally Stored Data
 
-PhotoCleaner stores locally only:
+Snap Sieve stores locally only:
 - Analysis results (photo identifiers, not the photos themselves)
 - User preferences
 - Thumbnail cache
@@ -145,7 +145,7 @@ All this data remains on your Mac and can be deleted at any time by uninstalling
 
 #### 8. Children
 
-PhotoCleaner is rated 4+ and can be used by all ages. We do not collect information from minors.
+Snap Sieve is rated 4+ and can be used by all ages. We do not collect information from minors.
 
 #### 9. Policy Changes
 
@@ -167,4 +167,4 @@ Para suporte técnico ou dúvidas sobre o app:
 
 ---
 
-**PhotoCleaner** © 2025 [SEU NOME/EMPRESA]. All rights reserved. Todos os direitos reservados.
+**Snap Sieve** © 2025 [SEU NOME/EMPRESA]. All rights reserved. Todos os direitos reservados.

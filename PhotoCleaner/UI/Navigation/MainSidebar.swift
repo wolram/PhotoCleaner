@@ -76,10 +76,10 @@ struct MainSidebar: View {
                     Label("Quality", systemImage: "sparkles")
                 }
 
-                NavigationLink(value: NavigationDestination.battle) {
+                NavigationLink(value: NavigationDestination.sieve) {
                     Label {
                         HStack {
-                            Text("Battle")
+                            Text("Sieve Mode")
                             Spacer()
                             Text("FUN")
                                 .font(.caption2)
@@ -118,7 +118,7 @@ struct MainSidebar: View {
             }
         }
         .listStyle(.sidebar)
-        .navigationTitle("PhotoCleaner")
+        .navigationTitle("Snap Sieve")
         .toolbar {
             ToolbarItem {
                 Button {

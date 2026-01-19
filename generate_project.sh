@@ -1,62 +1,27 @@
 #!/bin/bash
 
-# PhotoCleaner Xcode Project Generator
-# This script creates an Xcode project from the Swift source files
+# SnapSieve Xcode Project Generator
+# Uses XcodeGen to generate the .xcodeproj
+#
 
-set -e
-
-PROJECT_NAME="PhotoCleaner"
-BUNDLE_ID="com.photocleaner.app"
+PROJECT_NAME="SnapSieve"
+BUNDLE_ID="com.marlowsousa.snapsieve"
 DEPLOYMENT_TARGET="14.0"
+SOURCE_DIR="PhotoCleaner"
 
 echo "🚀 Generating Xcode project for $PROJECT_NAME..."
 echo ""
 
-# Check if Info.plist exists
-if [ ! -f "$PROJECT_NAME/Info.plist" ]; then
-    echo "⚠️  Info.plist not found. Creating..."
-    mkdir -p "$PROJECT_NAME"
-    cat > "$PROJECT_NAME/Info.plist" << 'PLIST_EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleDisplayName</key>
-	<string>Photo Cleaner</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.photocleaner.app</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>LSMinimumSystemVersion</key>
-	<string>14.0</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2026. All rights reserved.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Photo Cleaner precisa acessar sua biblioteca de fotos para encontrar duplicatas e fotos similares.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Photo Cleaner precisa de permissão para gerenciar e apagar fotos da sua biblioteca.</string>
-</dict>
-</plist>
-PLIST_EOF
-    echo "✅ Info.plist created"
+# Check if Info.plist exists in source dir
+if [ ! -f "$SOURCE_DIR/Info.plist" ]; then
+    echo "❌ Error: $SOURCE_DIR/Info.plist not found!"
+    exit 1
 fi
 
 # Check if entitlements file exists
-if [ ! -f "$PROJECT_NAME/PhotoCleaner.entitlements" ]; then
-    echo "⚠️  Entitlements file not found. Creating..."
-    cat > "$PROJECT_NAME/PhotoCleaner.entitlements" << 'ENTITLEMENTS_EOF'
+if [ ! -f "$SOURCE_DIR/SnapSieve.entitlements" ]; then
+    echo "⚠️  SnapSieve.entitlements not found in $SOURCE_DIR. Creating..."
+    cat > "$SOURCE_DIR/SnapSieve.entitlements" << 'ENTITLEMENTS_EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -72,7 +37,6 @@ if [ ! -f "$PROJECT_NAME/PhotoCleaner.entitlements" ]; then
 </dict>
 </plist>
 ENTITLEMENTS_EOF
-    echo "✅ Entitlements file created"
 fi
 
 echo ""
@@ -86,7 +50,7 @@ if command -v xcodegen &> /dev/null; then
     cat > project.yml << EOF
 name: $PROJECT_NAME
 options:
-  bundleIdPrefix: com.photocleaner
+  bundleIdPrefix: com.marlowsousa
   deploymentTarget:
     macOS: "$DEPLOYMENT_TARGET"
   xcodeVersion: "15.0"
@@ -105,36 +69,47 @@ targets:
     type: application
     platform: macOS
     sources:
-      - path: $PROJECT_NAME
+      - path: $SOURCE_DIR
         excludes:
           - "**/*.md"
           - "**/Info.plist"
           - "**/*.entitlements"
     settings:
       base:
-        INFOPLIST_FILE: $PROJECT_NAME/Info.plist
-        CODE_SIGN_ENTITLEMENTS: $PROJECT_NAME/PhotoCleaner.entitlements
+        INFOPLIST_FILE: $SOURCE_DIR/Info.plist
+        CODE_SIGN_ENTITLEMENTS: $SOURCE_DIR/SnapSieve.entitlements
         LD_RUNPATH_SEARCH_PATHS: "\$(inherited) @executable_path/../Frameworks"
         SWIFT_STRICT_CONCURRENCY: complete
         ENABLE_USER_SCRIPT_SANDBOXING: NO
     info:
-      path: $PROJECT_NAME/Info.plist
+      path: $SOURCE_DIR/Info.plist
       properties:
         CFBundleIdentifier: $BUNDLE_ID
-        CFBundleDisplayName: Photo Cleaner
-        LSMinimumSystemVersion: "$DEPLOYMENT_TARGET"
-        NSPhotoLibraryUsageDescription: "Photo Cleaner precisa acessar sua biblioteca de fotos para encontrar duplicatas e fotos similares."
-        NSPhotoLibraryAddUsageDescription: "Photo Cleaner precisa de permissão para gerenciar e apagar fotos da sua biblioteca."
+        CFBundleDisplayName: "Snap Sieve"
+
+  ${PROJECT_NAME}Tests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: ${SOURCE_DIR}Tests
+    dependencies:
+      - target: $PROJECT_NAME
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
 
 schemes:
   $PROJECT_NAME:
     build:
       targets:
         $PROJECT_NAME: all
+        ${PROJECT_NAME}Tests: [test]
     run:
       config: Debug
-      commandLineArguments:
-        "-com.apple.CoreData.ConcurrencyDebug 1": true
+    test:
+      config: Debug
+      targets:
+        - ${PROJECT_NAME}Tests
     profile:
       config: Release
     archive:
@@ -145,45 +120,12 @@ EOF
     xcodegen generate
     
     if [ $? -eq 0 ]; then
-        echo ""
         echo "✅ Project generated successfully!"
-        echo ""
-        echo "📂 Opening project in Xcode..."
-        open ${PROJECT_NAME}.xcodeproj
-        echo ""
-        echo "📋 Next steps:"
-        echo "   1. In Xcode, go to Project Settings → Signing & Capabilities"
-        echo "   2. Select your Apple Developer Team"
-        echo "   3. Press Cmd+R to build and run"
-        echo ""
-        echo "🎉 Done! Your app should now open on macOS."
     else
         echo "❌ Error generating project"
         exit 1
     fi
-
 else
-    echo "❌ xcodegen not found!"
-    echo ""
-    echo "📦 Installing xcodegen via Homebrew..."
-    echo ""
-    
-    # Check if Homebrew is installed
-    if command -v brew &> /dev/null; then
-        echo "Installing xcodegen..."
-        brew install xcodegen
-        echo ""
-        echo "✅ xcodegen installed. Running script again..."
-        exec "$0"
-    else
-        echo "❌ Homebrew not found!"
-        echo ""
-        echo "Please install Homebrew first:"
-        echo "  /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
-        echo ""
-        echo "Then run this script again:"
-        echo "  ./generate_project.sh"
-        exit 1
-    fi
+    echo "❌ xcodegen not found! Please install it via 'brew install xcodegen'"
+    exit 1
 fi
-

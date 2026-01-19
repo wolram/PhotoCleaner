@@ -184,7 +184,7 @@ struct SettingsView: View {
                 .font(.system(size: 64))
                 .foregroundStyle(.blue)
 
-            Text("PhotoCleaner")
+            Text("Snap Sieve")
                 .font(.largeTitle)
                 .fontWeight(.bold)
 

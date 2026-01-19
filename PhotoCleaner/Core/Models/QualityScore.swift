@@ -1,6 +1,6 @@
 import Foundation
 
-struct QualityScore: Codable, Hashable {
+struct QualityScore: Codable, Hashable, Sendable {
     let aestheticScore: Float    // -1 to 1 (from Vision API)
     let isUtility: Bool          // Screenshot, document, etc.
     let blurScore: Float         // 0 to 1 (1 = sharp)

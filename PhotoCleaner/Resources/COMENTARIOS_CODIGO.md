@@ -1,6 +1,6 @@
-# 📚 Guia de Comentários do Código - PhotoCleaner
+# 📚 Guia de Comentários do Código - Snap Sieve
 
-Este documento explica todos os conceitos e padrões usados no projeto PhotoCleaner. Perfeito para aprendizado e criação de conteúdo educativo!
+Este documento explica todos os conceitos e padrões usados no projeto Snap Sieve. Perfeito para aprendizado e criação de conteúdo educativo!
 
 ---
 
@@ -16,12 +16,12 @@ O projeto usa o padrão MVVM, que separa:
    - `QualityScore`: Armazena métricas de qualidade
 
 2. **View (Visualização)**: Interface do usuário
-   - `BattleView`: Tela de batalha de fotos
-   - `BattleSelectionView`: Seleção de grupos
+   - `SieveView`: Tela de batalha de fotos
+   - `SieveSelectionView`: Seleção de grupos
    - `ContentArea`: Área principal do app
 
 3. **ViewModel**: Lógica de apresentação
-   - `BattleViewModel`: Gerencia estado do torneio
+   - `SieveViewModel`: Gerencia estado do torneio
    - `ScanViewModel`: Gerencia processo de análise
 
 ---
@@ -35,10 +35,10 @@ O projeto usa o padrão MVVM, que separa:
 @State private var showingError = false
 
 // @Published - Em ViewModels, notifica mudanças
-@Published var phase: BattlePhase = .notStarted
+@Published var phase: SievePhase = .notStarted
 
 // @StateObject - Cria e mantém uma instância de ObservableObject
-@StateObject private var viewModel = BattleViewModel()
+@StateObject private var viewModel = SieveViewModel()
 
 // @Environment - Acessa valores do ambiente
 @Environment(\.dismiss) private var dismiss
@@ -106,7 +106,7 @@ actor PhotoLibraryService {
 
 ```swift
 // Enum que carrega dados adicionais
-enum BattlePhase: Equatable {
+enum SievePhase: Equatable {
     case notStarted
     case fighting
     case roundWon(winnerId: String) // Carrega ID do vencedor
@@ -149,7 +149,7 @@ private var content: some View {
 
 ```swift
 // ❌ ERRADO - View fazendo tudo
-struct BattleView: View {
+struct SieveView: View {
     func setupTournament() {
         // Lógica complexa aqui...
         // Cálculos...
@@ -158,14 +158,14 @@ struct BattleView: View {
 }
 
 // ✅ CORRETO - ViewModel com lógica
-class BattleViewModel: ObservableObject {
+class SieveViewModel: ObservableObject {
     func setupTournament(from group: PhotoGroupEntity) {
         // Toda a lógica aqui
     }
 }
 
-struct BattleView: View {
-    @StateObject private var viewModel = BattleViewModel()
+struct SieveView: View {
+    @StateObject private var viewModel = SieveViewModel()
     
     var body: some View {
         // Apenas UI
@@ -181,7 +181,7 @@ struct BattleView: View {
 ### 2. Computed Properties
 
 ```swift
-class BattleViewModel: ObservableObject {
+class SieveViewModel: ObservableObject {
     @Published var rounds: [TournamentRound] = []
     @Published var currentRoundIndex: Int = 0
     
@@ -276,7 +276,7 @@ protocol Identifiable {
 }
 
 // Structs implementam o protocol
-struct BattleMatch: Identifiable, Equatable {
+struct SieveMatch: Identifiable, Equatable {
     let id = UUID()
     let photo1Id: String
     let photo2Id: String
@@ -297,7 +297,7 @@ ForEach(matches) { match in
 
 ```swift
 // View grande dividida em pequenas
-struct BattleView: View {
+struct SieveView: View {
     var body: some View {
         ZStack {
             background
@@ -430,7 +430,7 @@ Button("Selecionar Esquerda") {
 }
 
 // 2. ViewModel processa
-class BattleViewModel: ObservableObject {
+class SieveViewModel: ObservableObject {
     @Published var winnerSide: Side?
     
     func selectWinner(side: Side) {
@@ -452,14 +452,14 @@ var body: some View {
 
 ```swift
 // View recebe dados de fora
-struct BattleView: View {
+struct SieveView: View {
     let group: PhotoGroupEntity // Injetado
     
-    @StateObject private var viewModel = BattleViewModel()
+    @StateObject private var viewModel = SieveViewModel()
 }
 
 // Uso
-BattleView(group: selectedGroup)
+SieveView(group: selectedGroup)
 ```
 
 ---
@@ -615,14 +615,14 @@ func buildBracket(from photoIds: [String]) {
     
     // Enquanto tiver mais de 1 foto
     while remainingIds.count > 1 {
-        var roundMatches: [BattleMatch] = []
+        var roundMatches: [SieveMatch] = []
         var nextRoundIds: [String] = []
         
         // Cria confrontos (pares de fotos)
         while remainingIds.count >= 2 {
             let photo1 = remainingIds.removeFirst()
             let photo2 = remainingIds.removeFirst()
-            roundMatches.append(BattleMatch(photo1Id: photo1, photo2Id: photo2))
+            roundMatches.append(SieveMatch(photo1Id: photo1, photo2Id: photo2))
             
             // Placeholder para vencedor
             nextRoundIds.append("placeholder_\(roundMatches.count)")
@@ -729,10 +729,10 @@ var body: some View {
 
 ```swift
 // ✅ Logs informativos
-print("✅ BattleViewModel: Torneio iniciado com \(photos.count) fotos")
+print("✅ SieveViewModel: Torneio iniciado com \(photos.count) fotos")
 
 // ⚠️ Warnings (avisos)
-print("⚠️ BattleViewModel: Fotos insuficientes (precisa: 2, tem: \(count))")
+print("⚠️ SieveViewModel: Fotos insuficientes (precisa: 2, tem: \(count))")
 
 // ❌ Erros
 print("❌ PhotoAnalysis: Falha ao carregar imagem - \(error.localizedDescription)")
@@ -822,7 +822,7 @@ actor ImageCache {
 
 ### Tópicos para Vídeos
 
-1. **"SwiftUI do Zero ao PhotoCleaner"**
+1. **"SwiftUI do Zero ao Snap Sieve"**
    - Views básicas
    - State management
    - Navegação
@@ -912,10 +912,10 @@ class PhotoViewModel: ObservableObject {
 
 ```swift
 enum ViewFactory {
-    static func makeBattleView(
+    static func makeSieveView(
         for group: PhotoGroupEntity
     ) -> some View {
-        BattleView(group: group)
+        SieveView(group: group)
     }
     
     static func makeEmptyState() -> some View {
@@ -931,7 +931,7 @@ enum ViewFactory {
 class AppCoordinator: ObservableObject {
     @Published var path = NavigationPath()
     
-    func showBattle(for group: PhotoGroupEntity) {
+    func showSieve(for group: PhotoGroupEntity) {
         path.append(Route.battle(group))
     }
     
@@ -1011,7 +1011,7 @@ func process() {
 
 ## 🎯 PRÓXIMOS PASSOS
 
-### Melhorias Futuras no PhotoCleaner
+### Melhorias Futuras no Snap Sieve
 
 1. **Suporte a RAW**
    - Detectar arquivos RAW
@@ -1089,12 +1089,12 @@ func process() {
 - Detecção de duplicatas
 - Quality scores
 
-### Vídeo 5: "MVVM no PhotoCleaner"
+### Vídeo 5: "MVVM no Snap Sieve"
 - Arquitetura
 - ViewModels
 - Data flow
 
-### Vídeo 6: "Battle Mode - Algoritmo de Torneio"
+### Vídeo 6: "Sieve Mode - Algoritmo de Torneio"
 - Lógica do bracket
 - State machine
 - Animações

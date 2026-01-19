@@ -4,7 +4,7 @@ import Vision
 import AppKit
 #endif
 
-struct PhotoAsset: Identifiable, Hashable {
+struct PhotoAsset: Identifiable, Hashable, @unchecked Sendable {
     let id: String // PHAsset.localIdentifier
     let creationDate: Date?
     let modificationDate: Date?

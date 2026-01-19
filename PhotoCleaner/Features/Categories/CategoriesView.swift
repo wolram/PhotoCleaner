@@ -18,7 +18,6 @@ struct CategoriesView: View {
                 contentView
             }
         }
-        .navigationTitle("Categories")
         .searchable(text: $searchText, prompt: "Search categories")
     }
 

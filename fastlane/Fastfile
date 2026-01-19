@@ -1,23 +1,143 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
+# Fastfile for SnapSieve
+# Documentation: https://docs.fastlane.tools
 
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+default_platform(:mac)
 
-default_platform(:ios)
+platform :mac do
 
-platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  # Variáveis
+  scheme = "SnapSieve"
+  app_identifier = "com.marlowsousa.snapsieve"
+  xcodeproj = "SnapSieve.xcodeproj"
+
+  desc "Gerar o projeto Xcode com xcodegen"
+  lane :generate do
+    sh("cd .. && ./generate_project.sh")
   end
+
+  desc "Criar screenshots de placeholder (temporário)"
+  lane :create_placeholder_screenshots do
+    screenshots_dir = "./screenshots"
+    sh("mkdir -p #{screenshots_dir}")
+
+    # Criar 3 screenshots de placeholder em branco
+    3.times do |i|
+      screenshot_path = "#{screenshots_dir}/screenshot_#{i+1}.png"
+      unless File.exist?("../#{screenshot_path}")
+        sh("sips -z 1600 2560 ../DesignAssets/icon.png --out ../#{screenshot_path} 2>/dev/null || echo 'Criando placeholder...'")
+      end
+    end
+
+    UI.success("✅ Screenshots de placeholder criados em fastlane/screenshots/")
+  end
+
+  desc "🚀 PUBLICAÇÃO AUTOMÁTICA COMPLETA"
+  lane :publish do
+    UI.header("🚀 Iniciando publicação automática do SnapSieve")
+
+    # 1. Verificar credenciais
+    UI.message("1️⃣ Verificando credenciais...")
+    if ENV["TEAM_ID"].nil? || ENV["TEAM_ID"].empty?
+      UI.user_error!("❌ TEAM_ID não configurado no .env")
+    end
+    if ENV["FASTLANE_USER"].nil? || ENV["FASTLANE_USER"].empty?
+      UI.user_error!("❌ FASTLANE_USER não configurado no .env")
+    end
+    UI.success("✅ Credenciais OK: #{ENV['FASTLANE_USER']} (Team: #{ENV['TEAM_ID']})")
+
+    # 2. Gerar projeto
+    UI.message("2️⃣ Gerando projeto Xcode...")
+    generate
+
+    # 3. Criar screenshots placeholder se não existirem
+    UI.message("3️⃣ Verificando screenshots...")
+    screenshot_count = Dir.glob("../screenshots/*.png").count
+    if screenshot_count < 3
+      UI.important("⚠️  Menos de 3 screenshots encontrados, criando placeholders...")
+      create_placeholder_screenshots
+    else
+      UI.success("✅ #{screenshot_count} screenshots encontrados")
+    end
+
+    # 4. Build e Archive
+    UI.message("4️⃣ Criando build de release...")
+    sh("cd .. && xcodebuild -scheme #{scheme} -configuration Release clean archive -archivePath ./build/SnapSieve.xcarchive")
+
+    # 5. Export para PKG
+    UI.message("5️⃣ Exportando para PKG...")
+    sh("cd .. && xcodebuild -exportArchive -archivePath ./build/SnapSieve.xcarchive -exportPath ./build -exportOptionsPlist fastlane/ExportOptions.plist")
+
+    # 6. Upload para App Store Connect
+    UI.message("6️⃣ Fazendo upload para App Store Connect...")
+    deliver(
+      app_identifier: app_identifier,
+      username: ENV["FASTLANE_USER"],
+      team_id: ENV["TEAM_ID"],
+      skip_metadata: false,
+      skip_screenshots: false,
+      submit_for_review: false,
+      automatic_release: false,
+      force: true,
+      pkg: "./build/SnapSieve.pkg",
+      run_precheck_before_submit: false
+    )
+
+    UI.success("🎉 PUBLICAÇÃO COMPLETA!")
+    UI.success("📱 Acesse App Store Connect para submeter para revisão")
+    UI.success("🔗 https://appstoreconnect.apple.com")
+  end
+
+  desc "Build, archive e upload para App Store Connect"
+  lane :release do
+    UI.message("⚠️  Use 'fastlane mac publish' para publicação automática completa")
+    publish
+  end
+
+  desc "Validar o build antes de fazer upload"
+  lane :validate do
+    generate
+
+    xcodebuild(
+      scheme: scheme,
+      configuration: "Release",
+      build: true,
+      clean: true
+    )
+
+    UI.success("✅ Build validado com sucesso!")
+  end
+
+  desc "Atualizar apenas metadata (descrição, screenshots, etc)"
+  lane :metadata do
+    deliver(
+      app_identifier: app_identifier,
+      username: ENV["FASTLANE_USER"],
+      team_id: ENV["TEAM_ID"],
+      skip_binary_upload: true,
+      skip_screenshots: false,
+      submit_for_review: false,
+      force: true
+    )
+  end
+
+  desc "Apenas fazer upload de um build existente"
+  lane :upload do
+    deliver(
+      app_identifier: app_identifier,
+      username: ENV["FASTLANE_USER"],
+      team_id: ENV["TEAM_ID"],
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: false,
+      pkg: "./build/SnapSieve.pkg",
+      force: true
+    )
+  end
+
+  # Error handling
+  error do |lane, exception|
+    UI.error("❌ Erro na lane #{lane}: #{exception.message}")
+    UI.error("💡 Verifique o arquivo .env e suas credenciais Apple Developer")
+  end
+
 end

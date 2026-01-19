@@ -1,8 +1,8 @@
-# PhotoCleaner - Organize Suas Fotos com IA
+# Snap Sieve - Organize Suas Fotos com IA
 
 <div align="center">
 
-![PhotoCleaner Icon](https://img.shields.io/badge/macOS-14.0+-blue.svg)
+![Snap Sieve Icon](https://img.shields.io/badge/macOS-14.0+-blue.svg)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-Framework-green.svg)
 ![License](https://img.shields.io/badge/License-Proprietary-red.svg)
@@ -17,14 +17,14 @@
 
 ## 🎯 Sobre
 
-**PhotoCleaner** é um aplicativo nativo para macOS que usa inteligência artificial para encontrar e remover fotos duplicadas, similares e de baixa qualidade da sua biblioteca. Com tecnologia avançada de Vision Framework e Core ML da Apple, você pode recuperar gigabytes de espaço em minutos.
+**Snap Sieve** é um aplicativo nativo para macOS que usa inteligência artificial para encontrar e remover fotos duplicadas, similares e de baixa qualidade da sua biblioteca. Com tecnologia avançada de Vision Framework e Core ML da Apple, você pode recuperar gigabytes de espaço em minutos.
 
 ### ✨ Principais Recursos
 
 - 🔍 **Detecção Inteligente de Duplicatas** - Encontra fotos idênticas mesmo com nomes diferentes
 - 📸 **Identificação de Fotos Similares** - Detecta fotos parecidas tiradas em sequência
 - ⚡️ **Análise de Qualidade com IA** - Avalia automaticamente nitidez, exposição e composição
-- 🥊 **Modo Battle** - Compare fotos lado a lado em um torneio divertido
+- 🥊 **Modo Peneira** - Compare fotos lado a lado em um torneio divertido
 - 📊 **Estatísticas Detalhadas** - Veja quanto espaço pode recuperar antes de deletar
 - 🔒 **100% Privacidade** - Todo processamento é local, suas fotos nunca saem do Mac
 - 🎨 **Interface Nativa** - Design moderno com suporte a modo claro e escuro
@@ -35,7 +35,7 @@
 
 <div align="center">
 
-| Análise Automática | Modo Battle | Visualização de Grupos |
+| Análise Automática | Modo Peneira | Visualização de Grupos |
 |:------------------:|:-----------:|:----------------------:|
 | *Análise inteligente com IA* | *Compare e escolha* | *Organize em grupos* |
 
@@ -48,7 +48,7 @@
 1. **Conceda Acesso** - Permita acesso à sua biblioteca de fotos
 2. **Inicie a Análise** - Clique em "Iniciar Análise" e aguarde o scan
 3. **Revise os Resultados** - Explore fotos duplicadas e similares organizadas em grupos
-4. **Escolha e Delete** - Selecione fotos para remover ou use o Modo Battle
+4. **Escolha e Delete** - Selecione fotos para remover ou use o Modo Peneira
 5. **Libere Espaço** - Recupere gigabytes instantaneamente!
 
 ---
@@ -67,18 +67,18 @@
 ### Arquitetura
 
 ```
-PhotoCleaner/
+Snap Sieve/
 ├── App/
-│   ├── PhotoCleanerApp.swift          # Entry point
+│   ├── Snap SieveApp.swift          # Entry point
 │   └── AppState.swift                  # Estado global
 ├── Views/
 │   ├── ContentView.swift               # View principal
-│   ├── BattleView.swift                # Modo Battle
+│   ├── BattleView.swift                # Modo Peneira
 │   ├── PhotoLibraryView.swift          # Biblioteca
 │   └── ...
 ├── ViewModels/
 │   ├── ScanViewModel.swift             # Lógica de scan
-│   ├── BattleViewModel.swift           # Lógica de battle
+│   ├── BattleViewModel.swift           # Lógica de peneira
 │   └── ...
 ├── Services/
 │   ├── PhotoLibraryService.swift       # Acesso a fotos
@@ -144,14 +144,14 @@ PhotoCleaner/
 ### Clone o Repositório
 
 ```bash
-git clone https://github.com/seuUsuario/PhotoCleaner.git
-cd PhotoCleaner
+git clone https://github.com/seuUsuario/Snap Sieve.git
+cd Snap Sieve
 ```
 
 ### Abra no Xcode
 
 ```bash
-open PhotoCleaner.xcodeproj
+open Snap Sieve.xcodeproj
 ```
 
 ### Configure
@@ -202,7 +202,7 @@ Product > Archive
 Cmd+U
 
 # Ou via linha de comando
-xcodebuild test -scheme PhotoCleaner
+xcodebuild test -scheme Snap Sieve
 ```
 
 ### Coverage
@@ -253,7 +253,7 @@ xcodebuild test -scheme PhotoCleaner
 ```xml
 <!-- Info.plist -->
 <key>NSPhotoLibraryUsageDescription</key>
-<string>PhotoCleaner precisa acessar suas fotos para analisar 
+<string>Snap Sieve precisa acessar suas fotos para analisar 
 e identificar duplicatas. Todo processamento é local.</string>
 ```
 
@@ -286,7 +286,7 @@ e identificar duplicatas. Todo processamento é local.</string>
 - ✅ Detecção de duplicatas
 - ✅ Fotos similares
 - ✅ Análise de qualidade
-- ✅ Modo Battle
+- ✅ Modo Peneira
 - ✅ Interface nativa
 
 ### Versão 1.1 (Próxima)
@@ -338,7 +338,7 @@ O código-fonte está disponível para referência e auditoria, mas não pode se
 
 ### Reportar Bugs
 
-Encontrou um bug? Abra uma [issue](https://github.com/seuUsuario/PhotoCleaner/issues) com:
+Encontrou um bug? Abra uma [issue](https://github.com/seuUsuario/Snap Sieve/issues) com:
 
 - Descrição do problema
 - Passos para reproduzir
@@ -348,8 +348,8 @@ Encontrou um bug? Abra uma [issue](https://github.com/seuUsuario/PhotoCleaner/is
 ### Suporte
 
 - 📧 Email: [seu@email.com](mailto:seu@email.com)
-- 💬 Discussions: [GitHub Discussions](https://github.com/seuUsuario/PhotoCleaner/discussions)
-- 📖 Docs: [Wiki](https://github.com/seuUsuario/PhotoCleaner/wiki)
+- 💬 Discussions: [GitHub Discussions](https://github.com/seuUsuario/Snap Sieve/discussions)
+- 📖 Docs: [Wiki](https://github.com/seuUsuario/Snap Sieve/wiki)
 
 ---
 
