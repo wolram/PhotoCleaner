@@ -1,7 +1,7 @@
 import AppKit
 import CoreImage
 
-final class ImageProcessor {
+final class ImageProcessor: Sendable {
     static let shared = ImageProcessor()
 
     private let context: CIContext

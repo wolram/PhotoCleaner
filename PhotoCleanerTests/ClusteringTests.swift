@@ -1,5 +1,5 @@
 import XCTest
-@testable import PhotoCleaner
+@testable import SnapSieve
 
 final class ClusteringTests: XCTestCase {
 

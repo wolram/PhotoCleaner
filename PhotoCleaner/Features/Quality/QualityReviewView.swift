@@ -8,6 +8,7 @@ struct QualityReviewView: View {
     @State private var selectedGrade: QualityScore.Grade?
     @State private var selection = Set<String>()
     @State private var sortOrder: SortOrder = .qualityAsc
+    @State private var showDeleteConfirmation = false
 
     enum SortOrder: String, CaseIterable {
         case qualityAsc = "Lowest Quality First"
@@ -31,7 +32,6 @@ struct QualityReviewView: View {
                 contentView
             }
         }
-        .navigationTitle("Quality Review")
         .onAppear {
             print("QualityReviewView appeared. Found \(photos.count) photos with scores.")
         }
@@ -47,13 +47,41 @@ struct QualityReviewView: View {
                     Text("\(selection.count) selected")
                         .foregroundStyle(.secondary)
 
+                    Button("Clear Selection") {
+                        selection.removeAll()
+                    }
+                    .buttonStyle(.borderless)
+
                     Button(role: .destructive) {
-                        // Delete selected
+                        showDeleteConfirmation = true
                     } label: {
-                        Label("Delete", systemImage: "trash")
+                        Label("Delete Selected (\(selection.count))", systemImage: "trash")
                     }
                 }
             }
+        }
+        .confirmationDialog(
+            "Delete \(selection.count) low-quality photos?",
+            isPresented: $showDeleteConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Move to Trash", role: .destructive) {
+                Task {
+                    await deleteSelected()
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("The selected photos will be moved to Recently Deleted. This action cannot be undone.")
+        }
+    }
+
+    private func deleteSelected() async {
+        do {
+            try await PhotoLibraryService.shared.deleteAssets(identifiers: Array(selection))
+            selection.removeAll()
+        } catch {
+            print("❌ Delete error: \(error)")
         }
     }
 

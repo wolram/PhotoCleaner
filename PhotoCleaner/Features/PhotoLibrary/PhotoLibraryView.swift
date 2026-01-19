@@ -19,7 +19,6 @@ struct PhotoLibraryView: View {
                 photoGridView
             }
         }
-        .navigationTitle("All Photos")
         .toolbar {
             ToolbarItemGroup {
                 if !selection.isEmpty {
@@ -112,14 +111,15 @@ struct PhotoLibraryView: View {
     }
 
     private var noAccessView: some View {
-        EmptyStateView(
-            icon: "lock.shield",
-            title: "Photo Access Required",
-            message: "PhotoCleaner needs access to your photo library to help you organize and clean up your photos.",
-            actionTitle: "Open Settings"
-        ) {
-            if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Photos") {
-                NSWorkspace.shared.open(url)
+        ContentUnavailableView {
+            Label("Photos Access Required", systemImage: "photo.badge.exclamationmark")
+        } description: {
+            Text("Snap Sieve needs access to your photo library to help you organize and clean up your photos.")
+        } actions: {
+            Button("Open System Settings") {
+                if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Photos") {
+                    NSWorkspace.shared.open(url)
+                }
             }
         }
     }

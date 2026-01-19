@@ -1,9 +1,9 @@
-# PhotoCleaner - Descrição para App Store
+# Snap Sieve - Descrição para App Store
 
 ## 🇧🇷 PORTUGUÊS (Brasil)
 
 ### Nome do App
-**PhotoCleaner - Organize Suas Fotos**
+**Snap Sieve - Organize Suas Fotos**
 
 ### Subtítulo (30 caracteres)
 Limpe e organize sua biblioteca
@@ -15,7 +15,7 @@ fotos,duplicadas,limpeza,organizar,espaço,similar,qualidade,album,gerenciador,d
 
 **Libere espaço e organize sua biblioteca de fotos com inteligência artificial!**
 
-PhotoCleaner é o app definitivo para Mac que ajuda você a encontrar e remover fotos duplicadas, similares e de baixa qualidade da sua biblioteca. Com tecnologia avançada de IA, você recupera gigabytes de espaço em minutos.
+Snap Sieve é o app definitivo para Mac que ajuda você a encontrar e remover fotos duplicadas, similares e de baixa qualidade da sua biblioteca. Com tecnologia avançada de IA, você recupera gigabytes de espaço em minutos.
 
 **🎯 RECURSOS PRINCIPAIS**
 
@@ -28,7 +28,7 @@ PhotoCleaner é o app definitivo para Mac que ajuda você a encontrar e remover 
 • **Análise de Qualidade**
   Avalia automaticamente nitidez, exposição e composição de cada foto
 
-• **Modo Battle**
+• **Modo Peneira**
   Compare fotos lado a lado em um torneio divertido para escolher suas favoritas
 
 • **Visualização de Grupos**
@@ -49,7 +49,7 @@ PhotoCleaner é o app definitivo para Mac que ajuda você a encontrar e remover 
 2. Clique em "Iniciar Análise" 
 3. O app escaneia sua biblioteca usando IA
 4. Revise os resultados organizados em grupos
-5. Selecione fotos para remover ou use o Modo Battle
+5. Selecione fotos para remover ou use o Modo Peneira
 6. Libere espaço instantaneamente!
 
 **📊 TECNOLOGIA AVANÇADA**
@@ -79,13 +79,13 @@ Design nativo do macOS com interface limpa e intuitiva. Suporta modo claro e esc
 
 **💡 DICA PRO**
 
-Use o Modo Battle para grupos difíceis de decidir - é rápido e divertido escolher as melhores fotos!
+Use o Modo Peneira para grupos difíceis de decidir - é rápido e divertido escolher as melhores fotos!
 
 ---
 
 **Recupere seu espaço hoje mesmo!**
 
-Baixe PhotoCleaner e descubra quantos GB você pode liberar em sua biblioteca de fotos.
+Baixe Snap Sieve e descubra quantos GB você pode liberar em sua biblioteca de fotos.
 
 ---
 
@@ -96,7 +96,7 @@ Baixe PhotoCleaner e descubra quantos GB você pode liberar em sua biblioteca de
 • Detecção de duplicatas com IA
 • Identificação de fotos similares
 • Análise de qualidade automática
-• Modo Battle para comparação interativa
+• Modo Peneira para comparação interativa
 • Suporte completo ao macOS Sonoma
 • Interface nativa e moderna
 
@@ -105,7 +105,7 @@ Baixe PhotoCleaner e descubra quantos GB você pode liberar em sua biblioteca de
 ## 🇺🇸 ENGLISH (International)
 
 ### App Name
-**PhotoCleaner - Organize Your Photos**
+**Snap Sieve - Organize Your Photos**
 
 ### Subtitle (30 characters)
 Clean and organize your library
@@ -117,7 +117,7 @@ photos,duplicates,cleanup,organize,space,similar,quality,album,manager,duplicate
 
 **Free up space and organize your photo library with artificial intelligence!**
 
-PhotoCleaner is the ultimate Mac app that helps you find and remove duplicate, similar, and low-quality photos from your library. With advanced AI technology, you can recover gigabytes of space in minutes.
+Snap Sieve is the ultimate Mac app that helps you find and remove duplicate, similar, and low-quality photos from your library. With advanced AI technology, you can recover gigabytes of space in minutes.
 
 **🎯 KEY FEATURES**
 
@@ -130,7 +130,7 @@ PhotoCleaner is the ultimate Mac app that helps you find and remove duplicate, s
 • **Quality Analysis**
   Automatically evaluates sharpness, exposure, and composition of each photo
 
-• **Battle Mode**
+• **Sieve Mode**
   Compare photos side by side in a fun tournament to choose your favorites
 
 • **Group Visualization**
@@ -151,7 +151,7 @@ PhotoCleaner is the ultimate Mac app that helps you find and remove duplicate, s
 2. Click "Start Analysis"
 3. The app scans your library using AI
 4. Review results organized in groups
-5. Select photos to remove or use Battle Mode
+5. Select photos to remove or use Sieve Mode
 6. Free up space instantly!
 
 **📊 ADVANCED TECHNOLOGY**
@@ -181,13 +181,13 @@ Native macOS design with clean and intuitive interface. Supports light and dark 
 
 **💡 PRO TIP**
 
-Use Battle Mode for hard-to-decide groups - it's quick and fun to choose the best photos!
+Use Sieve Mode for hard-to-decide groups - it's quick and fun to choose the best photos!
 
 ---
 
 **Reclaim your space today!**
 
-Download PhotoCleaner and discover how many GB you can free up in your photo library.
+Download Snap Sieve and discover how many GB you can free up in your photo library.
 
 ---
 
@@ -198,7 +198,7 @@ Download PhotoCleaner and discover how many GB you can free up in your photo lib
 • AI-powered duplicate detection
 • Similar photo identification
 • Automatic quality analysis
-• Battle Mode for interactive comparison
+• Sieve Mode for interactive comparison
 • Full macOS Sonoma support
 • Native and modern interface
 
@@ -250,7 +250,7 @@ Você precisará de **pelo menos 3 screenshots** em resolução:
 1. **Tela Principal** - Mostrando a interface com sidebar e grupos
 2. **Resultados da Análise** - Stats com espaço recuperável
 3. **Visualização de Grupo** - Grid de fotos duplicadas
-4. **Modo Battle** - Comparação lado a lado
+4. **Modo Peneira** - Comparação lado a lado
 5. **Gráficos e Estatísticas** - Visualização de dados
 
 ---
@@ -310,10 +310,10 @@ Adicione esta descrição no seu Info.plist:
 
 **NSPhotoLibraryUsageDescription** (Português):
 ```
-PhotoCleaner precisa acessar suas fotos para analisar e identificar duplicatas, fotos similares e avaliar a qualidade das imagens. Nenhuma foto é enviada para fora do seu dispositivo - todo processamento é feito localmente.
+Snap Sieve precisa acessar suas fotos para analisar e identificar duplicatas, fotos similares e avaliar a qualidade das imagens. Nenhuma foto é enviada para fora do seu dispositivo - todo processamento é feito localmente.
 ```
 
 **NSPhotoLibraryUsageDescription** (English):
 ```
-PhotoCleaner needs access to your photos to analyze and identify duplicates, similar photos, and evaluate image quality. No photos are sent outside your device - all processing is done locally.
+Snap Sieve needs access to your photos to analyze and identify duplicates, similar photos, and evaluate image quality. No photos are sent outside your device - all processing is done locally.
 ```

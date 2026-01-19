@@ -1,7 +1,7 @@
 import Foundation
 
 enum AppConfig {
-    static let appName = "PhotoCleaner"
+    static let appName = "Snap Sieve"
     static let appVersion = "1.0.0"
 
     enum Thresholds {

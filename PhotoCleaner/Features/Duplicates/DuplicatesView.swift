@@ -18,7 +18,6 @@ struct DuplicatesView: View {
                 contentView
             }
         }
-        .navigationTitle("Duplicates")
         .onAppear {
             // Auto-select first group if none selected
             if selectedGroup == nil && !duplicateGroups.isEmpty {
@@ -197,6 +196,7 @@ struct DuplicateGroupRow: View {
 struct DuplicateDetailView: View {
     @Bindable var group: PhotoGroupEntity
     @State private var selectedPhotoId: String?
+    @State private var showDeleteConfirmation = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -255,14 +255,38 @@ struct DuplicateDetailView: View {
 
                 if group.selectedPhotoId != nil {
                     Button(role: .destructive) {
-                        // Delete non-selected photos
+                        showDeleteConfirmation = true
                     } label: {
-                        Label("Delete Others", systemImage: "trash")
+                        Label("Delete Others (\(group.photosToDelete.count))", systemImage: "trash")
                     }
+                    .disabled(group.photosToDelete.isEmpty)
                 }
             }
             .padding()
             .background(.regularMaterial)
+        }
+        .confirmationDialog(
+            "Delete \(group.photosToDelete.count) photos?",
+            isPresented: $showDeleteConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Move to Trash", role: .destructive) {
+                Task {
+                    await deleteNonSelected()
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("The selected photo will be kept. All others will be moved to Recently Deleted. Space saved: \(formattedRecoverable)")
+        }
+    }
+
+    private func deleteNonSelected() async {
+        let toDelete = group.photosToDelete.map { $0.localIdentifier }
+        do {
+            try await PhotoLibraryService.shared.deleteAssets(identifiers: toDelete)
+        } catch {
+            print("❌ Delete error: \(error)")
         }
     }
 

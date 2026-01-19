@@ -1,0 +1,11 @@
+Versão 1.0 - Lançamento Inicial
+
+• Detecção inteligente de fotos duplicadas usando IA
+• Identificação de fotos similares
+• Análise automática de qualidade (nitidez, exposição, composição)
+• Modo Peneira: compare fotos lado a lado de forma divertida
+• Interface nativa do macOS
+• 100% privado - todo processamento é local
+• Recupere gigabytes de espaço na sua biblioteca
+
+Requisitos: macOS 14.0 (Sonoma) ou superior

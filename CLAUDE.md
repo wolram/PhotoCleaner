@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-PhotoCleaner is a native macOS application (macOS 14.0+) that uses AI and computer vision to find and remove duplicate, similar, and low-quality photos. Built with SwiftUI, SwiftData, and Apple's Vision/CoreML frameworks.
+Snap Sieve is a native macOS application (macOS 14.0+) that uses AI and computer vision to find and remove duplicate, similar, and low-quality photos. Built with SwiftUI, SwiftData, and Apple's Vision/CoreML frameworks.
+
+**Note:** The repository directory is named "PhotoCleaner" but the application is branded as "Snap Sieve". The source code is in the `PhotoCleaner/` directory, tests in `PhotoCleanerTests/`, but the Xcode project, scheme, and bundle identifier all use "SnapSieve".
 
 ## Development Commands
 
@@ -15,7 +17,7 @@ PhotoCleaner is a native macOS application (macOS 14.0+) that uses AI and comput
 ./generate_project.sh
 
 # Open project
-open PhotoCleaner.xcodeproj
+open SnapSieve.xcodeproj
 ```
 
 The project uses `xcodegen` to generate the Xcode project from `project.yml`. The generator script (`generate_project.sh`) will automatically install xcodegen via Homebrew if not present.
@@ -27,10 +29,10 @@ The project uses `xcodegen` to generate the Xcode project from `project.yml`. Th
 Cmd+B
 
 # Build from command line
-xcodebuild -scheme PhotoCleaner -configuration Debug build
+xcodebuild -scheme SnapSieve -configuration Debug build
 
 # Build for Release
-xcodebuild -scheme PhotoCleaner -configuration Release build
+xcodebuild -scheme SnapSieve -configuration Release build
 ```
 
 ### Testing
@@ -40,13 +42,13 @@ xcodebuild -scheme PhotoCleaner -configuration Release build
 Cmd+U
 
 # Run tests from command line
-xcodebuild test -scheme PhotoCleaner
+xcodebuild test -scheme SnapSieve
 
 # Run specific test class
-xcodebuild test -scheme PhotoCleaner -only-testing:PhotoCleanerTests/PerceptualHashTests
+xcodebuild test -scheme SnapSieve -only-testing:SnapSieveTests/PerceptualHashTests
 
 # Run specific test method
-xcodebuild test -scheme PhotoCleaner -only-testing:PhotoCleanerTests/PerceptualHashTests/testHashSimilarity
+xcodebuild test -scheme SnapSieve -only-testing:SnapSieveTests/PerceptualHashTests/testHashSimilarity
 ```
 
 **Test Coverage Areas:**
@@ -60,17 +62,17 @@ xcodebuild test -scheme PhotoCleaner -only-testing:PhotoCleanerTests/PerceptualH
 
 ```bash
 # Clean build artifacts
-xcodebuild clean -scheme PhotoCleaner
+xcodebuild clean -scheme SnapSieve
 
 # Delete derived data
-rm -rf ~/Library/Developer/Xcode/DerivedData/PhotoCleaner-*
+rm -rf ~/Library/Developer/Xcode/DerivedData/SnapSieve-*
 ```
 
 ## Architecture
 
 ### High-Level Structure
 
-PhotoCleaner follows a **layered, service-oriented architecture** with strict separation of concerns:
+Snap Sieve follows a **layered, service-oriented architecture** with strict separation of concerns:
 
 ```
 UI Layer (Features) → ViewModels → Services (Actors) → Repositories → SwiftData Models
@@ -89,7 +91,7 @@ Each feature has its own directory under `Features/` containing:
 - ViewModel (MainActor, ObservableObject)
 - Feature-specific models (if needed)
 
-Features: Battle, Categories, Duplicates, PhotoLibrary, Quality, Scanning, Similar
+Features: Sieve, Categories, Duplicates, PhotoLibrary, Quality, Scanning, Similar
 
 **3. Repository Pattern**
 - `PhotoRepository` - CRUD operations for photos
@@ -215,7 +217,7 @@ enum NavigationDestination {
     case duplicates       // DuplicatesView
     case similar          // SimilarPhotosView
     case quality          // QualityReviewView
-    case battle           // BattleView (gamified selection)
+    case sieve            // SieveView (gamified selection)
     case categories       // CategoriesView (ML categorization)
 }
 ```
@@ -263,14 +265,14 @@ Central configuration file in `App/` containing:
 ### Info.plist Requirements
 ```xml
 <key>NSPhotoLibraryUsageDescription</key>
-<string>Photo Cleaner needs access to analyze and identify duplicates. All processing is local.</string>
+<string>Snap Sieve needs access to analyze and identify duplicates. All processing is local.</string>
 
 <key>NSPhotoLibraryAddUsageDescription</key>
-<string>Photo Cleaner needs permission to manage and delete photos.</string>
+<string>Snap Sieve needs permission to manage and delete photos.</string>
 ```
 
 ### Entitlements
-Required entitlements in `PhotoCleaner.entitlements`:
+Required entitlements in `SnapSieve.entitlements`:
 - `com.apple.security.app-sandbox` (true)
 - `com.apple.security.files.user-selected.read-write` (true)
 - `com.apple.security.assets.pictures.read-write` (true)
@@ -341,8 +343,8 @@ In Xcode Project Settings or Info.plist:
 Product > Archive
 
 # Or via command line
-xcodebuild -scheme PhotoCleaner -configuration Release archive \
-  -archivePath ./build/PhotoCleaner.xcarchive
+xcodebuild -scheme SnapSieve -configuration Release archive \
+  -archivePath ./build/SnapSieve.xcarchive
 ```
 
 ### 4. Upload to App Store
@@ -383,9 +385,9 @@ Tested on MacBook Pro M1, 16GB RAM:
 ## Project Structure Reference
 
 ```
-PhotoCleaner/
+PhotoCleaner/ (Source code directory, project name is SnapSieve)
 ├── App/                                # App entry point & global state
-│   ├── PhotoCleanerApp.swift
+│   ├── SnapSieveApp.swift
 │   ├── AppState.swift
 │   └── AppConfig.swift
 ├── Core/
@@ -398,7 +400,7 @@ PhotoCleaner/
 │   ├── SwiftData/                      # 3 SwiftData entities
 │   └── Repositories/                   # PhotoRepository, GroupRepository
 ├── Features/                           # 7 feature modules (each with View + ViewModel)
-│   ├── Battle/
+│   ├── Sieve/
 │   ├── Categories/
 │   ├── Duplicates/
 │   ├── PhotoLibrary/
@@ -406,7 +408,7 @@ PhotoCleaner/
 │   ├── Scanning/
 │   └── Similar/
 └── UI/
-    ├── Navigation/                     # NavigationDestination, MainSidebar
+    ├── Navigation/                     # NavigationDestination, MainSidebar, ContentArea
     ├── Components/                     # Reusable UI (AsyncThumbnailImage, etc.)
     └── Styles/                         # Theme & styling
 ```

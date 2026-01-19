@@ -1,4 +1,4 @@
-# PhotoCleaner - Guia Completo de Publicação na App Store
+# Snap Sieve - Guia Completo de Publicação na App Store
 
 ## 🎯 PASSO A PASSO COMPLETO
 
@@ -10,10 +10,10 @@ No Xcode, abra o arquivo `Info.plist` e adicione:
 
 ```xml
 <key>NSPhotoLibraryUsageDescription</key>
-<string>PhotoCleaner precisa acessar suas fotos para analisar e identificar duplicatas, fotos similares e avaliar a qualidade das imagens. Todo processamento é feito localmente no seu dispositivo.</string>
+<string>Snap Sieve precisa acessar suas fotos para analisar e identificar duplicatas, fotos similares e avaliar a qualidade das imagens. Todo processamento é feito localmente no seu dispositivo.</string>
 
 <key>CFBundleDisplayName</key>
-<string>PhotoCleaner</string>
+<string>Snap Sieve</string>
 
 <key>CFBundleShortVersionString</key>
 <string>1.0</string>
@@ -26,8 +26,8 @@ No Xcode, abra o arquivo `Info.plist` e adicione:
 
 1. Selecione o projeto no Xcode
 2. Na aba **General**:
-   - **Display Name:** PhotoCleaner
-   - **Bundle Identifier:** `com.seuNome.PhotoCleaner` (deve ser único)
+   - **Display Name:** Snap Sieve
+   - **Bundle Identifier:** `com.seuNome.Snap Sieve` (deve ser único)
    - **Version:** 1.0
    - **Build:** 1
    - **Deployment Target:** macOS 14.0
@@ -58,7 +58,7 @@ No Xcode, abra o arquivo `Info.plist` e adicione:
 Adicione `PrivacyInfo.xcprivacy` ao projeto:
 1. Arraste o arquivo para o Xcode
 2. ✅ Copy items if needed
-3. ✅ Add to targets: PhotoCleaner
+3. ✅ Add to targets: Snap Sieve
 
 ---
 
@@ -109,7 +109,7 @@ Se houver erros, corrija e archive novamente.
 3. Clique no **+** > **New App**
 4. Preencha:
    - **Platforms:** macOS
-   - **Name:** PhotoCleaner
+   - **Name:** Snap Sieve
    - **Primary Language:** Portuguese (Brazil) ou English
    - **Bundle ID:** Selecione o mesmo do Xcode
    - **SKU:** `photocleaner-2025` (identificador único interno)
@@ -118,7 +118,7 @@ Se houver erros, corrija e archive novamente.
 #### 3.2 Preencha Informações do App
 
 ##### App Information
-- **Name:** PhotoCleaner - Organize Suas Fotos
+- **Name:** Snap Sieve - Organize Suas Fotos
 - **Subtitle:** Limpe e organize sua biblioteca (30 caracteres max)
 - **Primary Category:** Utilities
 - **Secondary Category:** Productivity
@@ -158,7 +158,7 @@ Você precisa de **pelo menos 3 screenshots**:
 
 1. **Tela Principal** com grupos de fotos duplicadas visíveis
 2. **Resultados da Análise** mostrando estatísticas e espaço recuperável
-3. **Modo Battle** com duas fotos lado a lado
+3. **Modo Peneira** com duas fotos lado a lado
 4. **Visualização de Grupo** com grid de fotos duplicadas
 5. **Detalhes de Qualidade** (opcional)
 
@@ -185,7 +185,7 @@ Link para página de marketing do app (se tiver)
 
 ##### Promotional Text (opcional - 170 caracteres)
 ```
-🎉 Lançamento! Libere gigabytes de espaço encontrando fotos duplicadas e similares com IA. Modo Battle exclusivo para escolher suas melhores fotos!
+🎉 Lançamento! Libere gigabytes de espaço encontrando fotos duplicadas e similares com IA. Modo Peneira exclusivo para escolher suas melhores fotos!
 ```
 
 ##### What's New in This Version
@@ -196,7 +196,7 @@ Versão 1.0 - Lançamento Inicial
 • Detecção inteligente de fotos duplicadas
 • Identificação de fotos similares
 • Análise automática de qualidade
-• Modo Battle para comparação interativa
+• Modo Peneira para comparação interativa
 • Interface nativa do macOS
 • 100% processamento local - privacidade garantida
 ```
@@ -258,14 +258,14 @@ No topo da página, clique **App Information**:
 
 - **Notes:** (opcional)
 ```
-PhotoCleaner é um app de limpeza de fotos que usa Vision Framework e Core ML da Apple para encontrar duplicatas e avaliar qualidade. Todo processamento é local. 
+Snap Sieve é um app de limpeza de fotos que usa Vision Framework e Core ML da Apple para encontrar duplicatas e avaliar qualidade. Todo processamento é local. 
 
 Para testar:
 1. Conceda acesso à biblioteca de fotos quando solicitado
 2. Clique em "Iniciar Análise"
 3. Aguarde o scan completar
 4. Explore os grupos de duplicatas
-5. Teste o Modo Battle clicando em qualquer grupo
+5. Teste o Modo Peneira clicando em qualquer grupo
 
 Nenhuma conta ou configuração especial é necessária.
 ```
@@ -365,7 +365,7 @@ Se quiser testar outros valores:
 
 ### "Invalid Bundle Identifier"
 - Certifique-se que o Bundle ID no Xcode é único
-- Deve seguir formato: `com.seuNome.PhotoCleaner`
+- Deve seguir formato: `com.seuNome.Snap Sieve`
 
 ### "App uses non-public API"
 - Remova qualquer uso de APIs privadas

@@ -1,0 +1,71 @@
+Libere espaço e organize sua biblioteca de fotos com inteligência artificial!
+
+Snap Sieve é o app definitivo para Mac que ajuda você a encontrar e remover fotos duplicadas, similares e de baixa qualidade da sua biblioteca. Com tecnologia avançada de IA, você recupera gigabytes de espaço em minutos.
+
+🎯 RECURSOS PRINCIPAIS
+
+• Detecção Inteligente de Duplicatas
+  Encontra fotos idênticas mesmo com nomes diferentes usando análise avançada de imagens
+
+• Fotos Similares
+  Identifica fotos parecidas tiradas em sequência - perfeito para escolher a melhor
+
+• Análise de Qualidade
+  Avalia automaticamente nitidez, exposição e composição de cada foto
+
+• Modo Peneira
+  Compare fotos lado a lado em um torneio divertido para escolher suas favoritas
+
+• Visualização de Grupos
+  Organize fotos duplicadas e similares em grupos fáceis de revisar
+
+• Estatísticas Detalhadas
+  Veja quanto espaço você pode recuperar antes de deletar
+
+• 100% Seguro
+  Você tem controle total - o app apenas sugere, você decide o que remover
+
+• Privacidade em Primeiro Lugar
+  Todo processamento é feito localmente no seu Mac. Suas fotos nunca saem do dispositivo
+
+⚡️ COMO FUNCIONA
+
+1. Conceda acesso à sua biblioteca de fotos
+2. Clique em "Iniciar Análise"
+3. O app escaneia sua biblioteca usando IA
+4. Revise os resultados organizados em grupos
+5. Selecione fotos para remover ou use o Modo Peneira
+6. Libere espaço instantaneamente!
+
+📊 TECNOLOGIA AVANÇADA
+
+• Machine Learning da Apple (Core ML)
+• Análise de características visuais (Vision Framework)
+• Processamento paralelo para velocidade máxima
+• Algoritmos de hash perceptual
+• Avaliação automática de qualidade estética
+
+✨ INTERFACE MODERNA
+
+Design nativo do macOS com interface limpa e intuitiva. Suporta modo claro e escuro.
+
+🎓 CASOS DE USO
+
+• Fotógrafos que tiram múltiplas fotos da mesma cena
+• Quem importou a biblioteca várias vezes
+• Usuários com espaço de armazenamento limitado
+• Quem quer organizar anos de fotos acumuladas
+• Backup antes de migrar para novo Mac
+
+⚙️ REQUISITOS
+
+• macOS 14.0 (Sonoma) ou superior
+• Acesso à biblioteca de fotos do Mac
+
+💡 DICA PRO
+
+Use o Modo Peneira para grupos difíceis de decidir - é rápido e divertido escolher as melhores fotos!
+
+Recupere seu espaço hoje mesmo!
+
+Baixe Snap Sieve e descubra quantos GB você pode liberar em sua biblioteca de fotos.

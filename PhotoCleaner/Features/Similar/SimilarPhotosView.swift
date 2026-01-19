@@ -29,7 +29,6 @@ struct SimilarPhotosView: View {
                 contentView
             }
         }
-        .navigationTitle("Similar Photos")
         .onAppear {
             print("SimilarPhotosView appeared. Found \(similarGroups.count) groups.")
             // Auto-select first group if none selected
@@ -148,6 +147,13 @@ struct SimilarGroupDetailView: View {
     let group: PhotoGroupEntity
     let viewMode: SimilarPhotosView.ViewMode
     @State private var selection = Set<String>()
+    @State private var showDeleteConfirmation = false
+    @State private var deleteMode: DeleteMode = .selected
+
+    enum DeleteMode {
+        case selected
+        case unselected
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -187,6 +193,24 @@ struct SimilarGroupDetailView: View {
             if !selection.isEmpty {
                 Divider()
                 actionBar
+            }
+        }
+        .confirmationDialog(
+            deleteMode == .selected ? "Delete \(selection.count) photos?" : "Delete \(group.photos.count - selection.count) photos?",
+            isPresented: $showDeleteConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Move to Trash", role: .destructive) {
+                Task {
+                    await deletePhotos()
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            if deleteMode == .selected {
+                Text("The selected photos will be moved to Recently Deleted.")
+            } else {
+                Text("The selected photos will be kept. All others will be moved to Recently Deleted.")
             }
         }
     }
@@ -268,16 +292,42 @@ struct SimilarGroupDetailView: View {
 
             Spacer()
 
-            Button("Keep Selected") {
-                // Keep selected, mark others for deletion
+            Button {
+                deleteMode = .unselected
+                showDeleteConfirmation = true
+            } label: {
+                Label("Delete Others (\(group.photos.count - selection.count))", systemImage: "trash")
             }
+            .disabled(selection.count == group.photos.count)
 
-            Button("Delete Selected", role: .destructive) {
-                // Delete selected photos
+            Button(role: .destructive) {
+                deleteMode = .selected
+                showDeleteConfirmation = true
+            } label: {
+                Label("Delete Selected (\(selection.count))", systemImage: "trash.fill")
             }
         }
         .padding()
         .background(.regularMaterial)
+    }
+
+    private func deletePhotos() async {
+        let toDelete: [String]
+
+        if deleteMode == .selected {
+            toDelete = Array(selection)
+        } else {
+            toDelete = group.photos
+                .map { $0.localIdentifier }
+                .filter { !selection.contains($0) }
+        }
+
+        do {
+            try await PhotoLibraryService.shared.deleteAssets(identifiers: toDelete)
+            selection.removeAll()
+        } catch {
+            print("❌ Delete error: \(error)")
+        }
     }
 }
 

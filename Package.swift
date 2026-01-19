@@ -2,16 +2,16 @@
 import PackageDescription
 
 let package = Package(
-    name: "PhotoCleaner",
+    name: "SnapSieve",
     platforms: [
         .macOS(.v14)
     ],
     products: [
-        .library(name: "PhotoCleaner", targets: ["PhotoCleaner"])
+        .library(name: "SnapSieve", targets: ["SnapSieve"])
     ],
     targets: [
         .target(
-            name: "PhotoCleaner",
+            name: "SnapSieve",
             path: "PhotoCleaner",
             linkerSettings: [
                 .linkedFramework("AppKit"),
@@ -19,8 +19,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "PhotoCleanerTests",
-            dependencies: ["PhotoCleaner"],
+            name: "SnapSieveTests",
+            dependencies: ["SnapSieve"],
             path: "PhotoCleanerTests"
         )
     ]
